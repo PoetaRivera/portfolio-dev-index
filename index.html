@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Proyectos - Dev Portfolio</title>
+
+    <!-- Fuente Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Tema Oscuro Premium */
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            /* Sky Blue */
+            --accent-glow: rgba(56, 189, 248, 0.2);
+            --app-bg: #1e3a8a;
+            /* Azul Intenso para Apps */
+            --app-border: #60a5fa;
+            --repo-border: #334155;
+
+            --font-main: 'Outfit', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 3rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+
+        section {
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--text-main);
+        }
+
+        .section-badge {
+            background-color: #334155;
+            color: #cbd5e1;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Tarjeta Base */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--repo-border);
+            border-radius: 16px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            border-color: #475569;
+        }
+
+        .card-content {
+            margin-bottom: 1.5rem;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin: 0 0 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Estilo para Apps Desplegadas */
+        .card-app {
+            background: linear-gradient(145deg, #1e3a8a, #172554);
+            border-color: var(--app-border);
+            box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .card-app:hover {
+            box-shadow: 0 15px 40px -10px rgba(96, 165, 250, 0.4);
+            border-color: #93c5fd;
+        }
+
+        .card-app h2 {
+            color: #ffffff;
+        }
+
+        .card-app p {
+            color: #bfdbfe;
+        }
+
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-weight: 500;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            border: 1px solid transparent;
+        }
+
+        .card-app .tag {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #dbeafe;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Botones */
+        .links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: auto;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            flex: 1;
+        }
+
+        .btn-repo {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid var(--repo-border);
+        }
+
+        .btn-repo:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--text-secondary);
+        }
+
+        .btn-live {
+            background-color: var(--accent);
+            color: #0c4a6e;
+            border: 1px solid var(--accent);
+        }
+
+        .btn-live:hover {
+            background-color: #7dd3fc;
+            transform: scale(1.02);
+        }
+
+        /* Iconos SVG */
+        .icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Mis Proyectos</h1>
+        <p class="subtitle">Índice interactivo de aplicaciones y repositorios</p>
+    </header>
+
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">🚀 Apps Desplegadas</h2>
+            <span class="section-badge" id="count-apps">0</span>
+        </div>
+        <div id="apps-grid" class="grid-container"></div>
+    </section>
+
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">📦 Otros Repositorios</h2>
+            <span class="section-badge" id="count-repos">0</span>
+        </div>
+        <div id="repos-grid" class="grid-container"></div>
+    </section>
+
+    <script>
+        // --- DATA DE PROYECTOS ---
+        const proyectos = [
+            {
+                nombre: "Login Firebase (pedido-login)",
+                desc: "Sistema de autenticación robusto implementado con Firebase Auth y React.",
+                tecnologias: ["Firebase", "React", "Auth"],
+                repo: "https://github.com/PoetaRivera/pedido-login",
+                demo: "https://login-firebase-87f94.web.app"
+            },
+            {
+                nombre: "Multisalon",
+                desc: "Plataforma integral SaaS para la gestión de reservas, inventario y personal en salones de belleza.",
+                tecnologias: ["JavaScript", "SaaS", "Frontend"],
+                repo: "https://github.com/PoetaRivera/Salon-de-belleza",
+                demo: "https://misalon.misalons.com"
+            },
+            {
+                nombre: "Asistente Poético",
+                desc: "Herramienta literaria que analiza la métrica y conteo silábico de poemas automáticamente.",
+                tecnologias: ["JavaScript", "Algoritmos", "Literatura"],
+                repo: "https://github.com/PoetaRivera/Asistente-Poetico",
+                demo: "https://asistentepoetico.web.app"
+            },
+            {
+                nombre: "Financiera App",
+                desc: "Aplicación web para control de finanzas personales, seguimiento de gastos y proyecciones.",
+                tecnologias: ["JavaScript", "Finance"],
+                repo: "https://github.com/PoetaRivera/financiera",
+                demo: "https://financiera-ten.vercel.app"
+            },
+            {
+                nombre: "Pedidos Frontend",
+                desc: "Interfaz moderna y reactiva para un sistema de gestión de pedidos en tiempo real.",
+                tecnologias: ["JavaScript", "UI/UX"],
+                repo: "https://github.com/PoetaRivera/pedidosFrontend",
+                demo: "https://pedidos-frontend-eight.vercel.app"
+            },
+            {
+                nombre: "Poesía Isela Escárcega",
+                desc: "Portfolio digital y colección antológica de la obra de la poeta Isela Escárcega.",
+                tecnologias: ["Web", "Portfolio"],
+                repo: null,
+                demo: "https://poesiaiselaescarcega.web.app"
+            },
+            {
+                nombre: "Poesía Nelson Rivera",
+                desc: "Sitio web dedicado a la difusión y preservación de la obra literaria de Nelson Rivera.",
+                tecnologias: ["Web", "Cultura"],
+                repo: null,
+                demo: "https://poesianelsonrivera.web.app"
+            },
+            {
+                nombre: "Backend User Firebase",
+                desc: "Microservicio backend para la gestión de perfiles de usuario y roles con Firebase Admin.",
+                tecnologias: ["Backend", "Firebase"],
+                repo: null,
+                demo: "https://backenduserfirebase.web.app"
+            },
+            {
+                nombre: "Portfolio Dev (Este sitio)",
+                desc: "Directorio central de proyectos y repositorio personal desarrollado con HTML5 y CSS moderno.",
+                tecnologias: ["HTML", "CSS", "Portfolio"],
+                repo: "https://github.com/PoetaRivera/poetarivera.github.io",
+                demo: "https://poetarivera.github.io/"
+            },
+            {
+                nombre: "Landing Page Frontend",
+                desc: "Landing page optimizada para adminMisalons, enfocada en conversión y presentación de producto.",
+                tecnologias: ["Landing", "Marketing"],
+                repo: "https://github.com/PoetaRivera/landing-frontend",
+                demo: "https://adminmisalons.web.app/"
+            },
+            {
+                nombre: "Landing Backend",
+                desc: "API y servicios backend que dan soporte a la landing page y formularios de contacto.",
+                tecnologias: ["Backend", "API"],
+                repo: "https://github.com/PoetaRivera/landing-backend",
+                demo: null
+            },
+            {
+                nombre: "Backend Salon de Belleza",
+                desc: "Núcleo lógico y base de datos para la plataforma Multisalon.",
+                tecnologias: ["Backend", "Database"],
+                repo: "https://github.com/PoetaRivera/backend-salon-de-belleza",
+                demo: null
+            },
+            {
+                nombre: "Gestor de Comentarios",
+                desc: "Sistema modular para la integración y moderación de comentarios en blogs y sitios web.",
+                tecnologias: ["Tooling"],
+                repo: "https://github.com/PoetaRivera/gestordecomentarios",
+                demo: null
+            },
+            {
+                nombre: "Servidor Comentarios",
+                desc: "API RESTful dedicada al almacenamiento y servicio de comentarios de usuarios.",
+                tecnologias: ["Backend", "API"],
+                repo: "https://github.com/PoetaRivera/ServidorComentarios",
+                demo: null
+            },
+            {
+                nombre: "Asistente Poético (Legacy)",
+                desc: "Versión anterior del algortimo de análisis métrico (Deprecado).",
+                tecnologias: ["Legacy"],
+                repo: "https://github.com/PoetaRivera/asistente-poetico-ultima",
+                demo: null
+            }
+        ];
+
+        // --- ICONOS SVG ---
+        const icons = {
+            github: `<svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>`,
+            link: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>`,
+            folder: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>`
+        };
+
+        // --- RENDERIZADO ---
+        const appsContainer = document.getElementById('apps-grid');
+        const reposContainer = document.getElementById('repos-grid');
+        const countApps = document.getElementById('count-apps');
+        const countRepos = document.getElementById('count-repos');
+
+        function createCard(p) {
+            const card = document.createElement('div');
+            card.className = p.demo ? 'card card-app' : 'card';
+
+            const btnRepo = p.repo
+                ? `<a href="${p.repo}" target="_blank" class="btn btn-repo">${icons.github} Code</a>`
+                : `<span class="btn btn-repo" style="opacity:0.5; cursor:not-allowed;">${icons.github} Privado</span>`;
+
+            const btnLive = p.demo
+                ? `<a href="${p.demo}" target="_blank" class="btn btn-live">${icons.link} Ver Demo</a>`
+                : '';
+
+            const tagsHtml = p.tecnologias && p.tecnologias.length > 0
+                ? p.tecnologias.map(t => `<span class="tag">${t}</span>`).join('')
+                : '';
+
+            card.innerHTML = `
+                <div class="card-content">
+                    <h2>${p.demo ? '' : icons.folder + ' '}${p.nombre}</h2>
+                    <p>${p.desc || 'Sin descripción disponible.'}</p>
+                    <div class="tags">${tagsHtml}</div>
+                </div>
+                <div class="links">
+                    ${btnLive}
+                    ${p.repo ? btnRepo : ''}
+                </div>
+            `;
+            return card;
+        }
+
+        // Ordenar: Apps primero, luego alfabéticamente
+        // (Aunque ya separamos por contenedores, ordenamos el array fuente por si acaso)
+        // proyectos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+
+        // Filtrar duplicados por nombre (por si acaso)
+        const uniqueProyectos = Array.from(new Map(proyectos.map(item => [item.nombre, item])).values());
+
+        let appCount = 0;
+        let repoCount = 0;
+
+        uniqueProyectos.forEach(p => {
+            const card = createCard(p);
+            if (p.demo) {
+                appsContainer.appendChild(card);
+                appCount++;
+            } else {
+                reposContainer.appendChild(card);
+                repoCount++;
+            }
+        });
+
+        countApps.textContent = appCount;
+        countRepos.textContent = repoCount;
+
+    </script>
+</body>
+
+</html>
