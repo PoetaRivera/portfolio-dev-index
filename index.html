@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Proyectos - Dev Portfolio</title>
+    <title>PoetaRivera | Full Stack Developer</title>
 
     <!-- Fuente Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
@@ -20,41 +21,67 @@
             --text-secondary: #94a3b8;
             --accent: #38bdf8;
             /* Sky Blue */
-            --accent-glow: rgba(56, 189, 248, 0.2);
+            --accent-hover: #0ea5e9;
             --app-bg: #1e3a8a;
-            /* Azul Intenso para Apps */
             --app-border: #60a5fa;
             --repo-border: #334155;
 
             --font-main: 'Outfit', sans-serif;
+            --container-width: 1200px;
         }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
             font-family: var(--font-main);
             background-color: var(--bg-color);
             color: var(--text-main);
-            margin: 0;
-            padding: 3rem 1.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
         }
 
+        /* --- HERO SECTION --- */
         header {
+            width: 100%;
+            background: radial-gradient(circle at top center, #1e293b 0%, #0f172a 100%);
+            padding: 6rem 1.5rem 4rem;
             text-align: center;
-            margin-bottom: 4rem;
-            max-width: 700px;
-            animation: fadeIn 1s ease-out;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .profile-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            border: 4px solid var(--bg-color);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
         }
 
         h1 {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            font-weight: 800;
             margin-bottom: 0.5rem;
             background: linear-gradient(to right, #38bdf8, #818cf8);
             -webkit-background-clip: text;
@@ -62,41 +89,125 @@
             letter-spacing: -1px;
         }
 
-        p.subtitle {
-            color: var(--text-secondary);
+        .role {
             font-size: 1.25rem;
-            font-weight: 300;
-        }
-
-        section {
-            width: 100%;
-            max-width: 1200px;
-            margin-bottom: 4rem;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
+            color: var(--accent);
             font-weight: 600;
-            margin: 0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p.bio {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+
+        .social-link:hover {
+            color: var(--accent);
+        }
+
+        /* --- CONTROLS --- */
+        .controls {
+            width: 100%;
+            max-width: var(--container-width);
+            padding: 2rem 1.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .search-bar {
+            position: relative;
+            flex-grow: 1;
+            max-width: 400px;
+        }
+
+        .search-input {
+            width: 100%;
+            background-color: var(--card-bg);
+            border: 1px solid var(--repo-border);
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border-radius: 12px;
+            color: var(--text-main);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            color: var(--text-secondary);
+        }
+
+        .filters {
+            display: flex;
+            gap: 0.75rem;
+            overflow-x: auto;
+            padding-bottom: 5px;
+            /* Scrollbar space */
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--repo-border);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            cursor: pointer;
+            font-family: var(--font-main);
+            font-weight: 500;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--text-secondary);
             color: var(--text-main);
         }
 
-        .section-badge {
-            background-color: #334155;
-            color: #cbd5e1;
-            padding: 0.25rem 0.75rem;
-            border-radius: 999px;
-            font-size: 0.875rem;
-            font-weight: 500;
+        .filter-btn.active {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        /* --- GRID --- */
+        main {
+            width: 100%;
+            max-width: var(--container-width);
+            padding: 2rem 1.5rem 4rem;
         }
 
         .grid-container {
@@ -105,7 +216,7 @@
             gap: 2rem;
         }
 
-        /* Tarjeta Base */
+        /* --- CARD --- */
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--repo-border);
@@ -115,9 +226,8 @@
             flex-direction: column;
             justify-content: space-between;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeInUp 0.6s ease-out backwards;
             position: relative;
-            overflow: hidden;
-            height: 100%;
         }
 
         .card:hover {
@@ -126,53 +236,47 @@
             border-color: #475569;
         }
 
-        .card-content {
-            margin-bottom: 1.5rem;
+        .card-app {
+            background: linear-gradient(145deg, #1e3a8a, #172554);
+            border-color: var(--app-border);
+            box-shadow: 0 0 15px rgba(30, 58, 138, 0.2);
+        }
+
+        .card-app:hover {
+            border-color: #93c5fd;
+            box-shadow: 0 10px 40px -10px rgba(96, 165, 250, 0.4);
         }
 
         .card h2 {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 600;
             color: var(--text-main);
-            margin: 0 0 0.75rem 0;
+            margin-bottom: 0.75rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+
+        .card-app h2 {
+            color: white;
         }
 
         .card p {
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.6;
-            margin: 0;
-        }
-
-        /* Estilo para Apps Desplegadas */
-        .card-app {
-            background: linear-gradient(145deg, #1e3a8a, #172554);
-            border-color: var(--app-border);
-            box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
-        }
-
-        .card-app:hover {
-            box-shadow: 0 15px 40px -10px rgba(96, 165, 250, 0.4);
-            border-color: #93c5fd;
-        }
-
-        .card-app h2 {
-            color: #ffffff;
+            margin-bottom: 1.5rem;
         }
 
         .card-app p {
             color: #bfdbfe;
         }
 
-        /* Tags */
         .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-top: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .tag {
@@ -182,16 +286,13 @@
             font-weight: 500;
             background-color: rgba(255, 255, 255, 0.05);
             color: var(--text-secondary);
-            border: 1px solid transparent;
         }
 
         .card-app .tag {
             background-color: rgba(255, 255, 255, 0.15);
             color: #dbeafe;
-            border-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* Botones */
         .links {
             display: flex;
             gap: 0.75rem;
@@ -203,8 +304,8 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 600;
@@ -225,25 +326,25 @@
 
         .btn-live {
             background-color: var(--accent);
-            color: #0c4a6e;
-            border: 1px solid var(--accent);
+            color: #011827;
         }
 
         .btn-live:hover {
             background-color: #7dd3fc;
             transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
         }
 
-        /* Iconos SVG */
         .icon {
             width: 18px;
             height: 18px;
         }
 
-        @keyframes fadeIn {
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(-30px);
             }
 
             to {
@@ -252,13 +353,42 @@
             }
         }
 
-        @media (max-width: 600px) {
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
             }
 
-            .grid-container {
-                grid-template-columns: 1fr;
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-bar {
+                max-width: 100%;
+            }
+
+            .filters {
+                padding-bottom: 10px;
             }
         }
     </style>
@@ -267,202 +397,245 @@
 <body>
 
     <header>
-        <h1>Mis Proyectos</h1>
-        <p class="subtitle">Índice interactivo de aplicaciones y repositorios</p>
+        <div class="profile-container">
+            <div class="profile-img">PR</div>
+        </div>
+        <h1>PoetaRivera</h1>
+        <div class="role">Full Stack Developer</div>
+        <p class="bio">
+            Desarrollador apasionado por crear soluciones web robustas y experiencias de usuario memorables.
+            Especializado en el ecosistema JavaScript, React y Firebase.
+        </p>
+        <div class="social-links">
+            <a href="https://github.com/PoetaRivera" target="_blank" class="social-link" title="GitHub">
+                <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+            <!-- Puedes agregar más redes aquí -->
+        </div>
     </header>
 
-    <section>
-        <div class="section-header">
-            <h2 class="section-title">🚀 Apps Desplegadas</h2>
-            <span class="section-badge" id="count-apps">0</span>
+    <div class="controls">
+        <div class="search-bar">
+            <svg class="icon search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar proyectos...">
         </div>
-        <div id="apps-grid" class="grid-container"></div>
-    </section>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="app">Apps Desplegadas</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+            <button class="filter-btn" data-filter="backend">Backend</button>
+        </div>
+    </div>
 
-    <section>
-        <div class="section-header">
-            <h2 class="section-title">📦 Otros Repositorios</h2>
-            <span class="section-badge" id="count-repos">0</span>
+    <main>
+        <div id="grid" class="grid-container">
+            <!-- Cards Renderizadas aquí -->
         </div>
-        <div id="repos-grid" class="grid-container"></div>
-    </section>
+    </main>
 
     <script>
-        // --- DATA DE PROYECTOS ---
+        // --- DATA ---
         const proyectos = [
             {
                 nombre: "Login Firebase (pedido-login)",
-                desc: "Sistema de autenticación robusto implementado con Firebase Auth y React.",
+                desc: "Sistema autenticación robusto con Firebase Auth y React.",
                 tecnologias: ["Firebase", "React", "Auth"],
                 repo: "https://github.com/PoetaRivera/pedido-login",
                 demo: "https://login-firebase-87f94.web.app"
             },
             {
                 nombre: "Multisalon",
-                desc: "Plataforma integral SaaS para la gestión de reservas, inventario y personal en salones de belleza.",
+                desc: "Plataforma integral SaaS para gestión de salones de belleza.",
                 tecnologias: ["JavaScript", "SaaS", "Frontend"],
                 repo: "https://github.com/PoetaRivera/Salon-de-belleza",
                 demo: "https://misalon.misalons.com"
             },
             {
                 nombre: "Asistente Poético",
-                desc: "Herramienta literaria que analiza la métrica y conteo silábico de poemas automáticamente.",
+                desc: "Herramienta que analiza métrica y conteo silábico de poemas.",
                 tecnologias: ["JavaScript", "Algoritmos", "Literatura"],
                 repo: "https://github.com/PoetaRivera/Asistente-Poetico",
                 demo: "https://asistentepoetico.web.app"
             },
             {
                 nombre: "Financiera App",
-                desc: "Aplicación web para control de finanzas personales, seguimiento de gastos y proyecciones.",
+                desc: "Web para control de finanzas personales y gastos.",
                 tecnologias: ["JavaScript", "Finance"],
                 repo: "https://github.com/PoetaRivera/financiera",
                 demo: "https://financiera-ten.vercel.app"
             },
             {
                 nombre: "Pedidos Frontend",
-                desc: "Interfaz moderna y reactiva para un sistema de gestión de pedidos en tiempo real.",
+                desc: "Interfaz reactiva para gestión de pedidos en tiempo real.",
                 tecnologias: ["JavaScript", "UI/UX"],
                 repo: "https://github.com/PoetaRivera/pedidosFrontend",
                 demo: "https://pedidos-frontend-eight.vercel.app"
             },
             {
                 nombre: "Poesía Isela Escárcega",
-                desc: "Portfolio digital y colección antológica de la obra de la poeta Isela Escárcega.",
+                desc: "Portfolio digital de la poeta Isela Escárcega.",
                 tecnologias: ["Web", "Portfolio"],
                 repo: null,
                 demo: "https://poesiaiselaescarcega.web.app"
             },
             {
                 nombre: "Poesía Nelson Rivera",
-                desc: "Sitio web dedicado a la difusión y preservación de la obra literaria de Nelson Rivera.",
+                desc: "Web de difusión de la obra de Nelson Rivera.",
                 tecnologias: ["Web", "Cultura"],
                 repo: null,
                 demo: "https://poesianelsonrivera.web.app"
             },
             {
                 nombre: "Backend User Firebase",
-                desc: "Microservicio backend para la gestión de perfiles de usuario y roles con Firebase Admin.",
+                desc: "Microservicio backend para gestión de usuarios.",
                 tecnologias: ["Backend", "Firebase"],
                 repo: null,
                 demo: "https://backenduserfirebase.web.app"
             },
             {
                 nombre: "Portfolio Dev (Este sitio)",
-                desc: "Directorio central de proyectos y repositorio personal desarrollado con HTML5 y CSS moderno.",
+                desc: "Directorio de proyectos personal.",
                 tecnologias: ["HTML", "CSS", "Portfolio"],
                 repo: "https://github.com/PoetaRivera/poetarivera.github.io",
                 demo: "https://poetarivera.github.io/"
             },
             {
                 nombre: "Landing Page Frontend",
-                desc: "Landing page optimizada para adminMisalons, enfocada en conversión y presentación de producto.",
+                desc: "Landing page optimizada para adminMisalons.",
                 tecnologias: ["Landing", "Marketing"],
                 repo: "https://github.com/PoetaRivera/landing-frontend",
                 demo: "https://adminmisalons.web.app/"
             },
             {
                 nombre: "Landing Backend",
-                desc: "API y servicios backend que dan soporte a la landing page y formularios de contacto.",
+                desc: "API y servicios para landing page.",
                 tecnologias: ["Backend", "API"],
                 repo: "https://github.com/PoetaRivera/landing-backend",
                 demo: null
             },
             {
                 nombre: "Backend Salon de Belleza",
-                desc: "Núcleo lógico y base de datos para la plataforma Multisalon.",
+                desc: "Núcleo lógico y BD para Multisalon.",
                 tecnologias: ["Backend", "Database"],
                 repo: "https://github.com/PoetaRivera/backend-salon-de-belleza",
                 demo: null
             },
             {
                 nombre: "Gestor de Comentarios",
-                desc: "Sistema modular para la integración y moderación de comentarios en blogs y sitios web.",
+                desc: "Sistema modular para comentarios en blogs.",
                 tecnologias: ["Tooling"],
                 repo: "https://github.com/PoetaRivera/gestordecomentarios",
                 demo: null
             },
             {
                 nombre: "Servidor Comentarios",
-                desc: "API RESTful dedicada al almacenamiento y servicio de comentarios de usuarios.",
+                desc: "API RESTful para servicio de comentarios.",
                 tecnologias: ["Backend", "API"],
                 repo: "https://github.com/PoetaRivera/ServidorComentarios",
                 demo: null
             },
             {
                 nombre: "Asistente Poético (Legacy)",
-                desc: "Versión anterior del algortimo de análisis métrico (Deprecado).",
+                desc: "Versión anterior del algortimo (Deprecado).",
                 tecnologias: ["Legacy"],
                 repo: "https://github.com/PoetaRivera/asistente-poetico-ultima",
                 demo: null
             }
         ];
 
-        // --- ICONOS SVG ---
+        // --- ICONS ---
         const icons = {
             github: `<svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>`,
-            link: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>`,
-            folder: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>`
+            link: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>`
         };
 
-        // --- RENDERIZADO ---
-        const appsContainer = document.getElementById('apps-grid');
-        const reposContainer = document.getElementById('repos-grid');
-        const countApps = document.getElementById('count-apps');
-        const countRepos = document.getElementById('count-repos');
+        // --- LOGIC ---
+        const grid = document.getElementById('grid');
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.filter-btn');
 
-        function createCard(p) {
-            const card = document.createElement('div');
-            card.className = p.demo ? 'card card-app' : 'card';
+        let currentFilter = 'all';
+        let currentSearch = '';
 
-            const btnRepo = p.repo
-                ? `<a href="${p.repo}" target="_blank" class="btn btn-repo">${icons.github} Code</a>`
-                : `<span class="btn btn-repo" style="opacity:0.5; cursor:not-allowed;">${icons.github} Privado</span>`;
+        function renderProjects() {
+            grid.innerHTML = '';
 
-            const btnLive = p.demo
-                ? `<a href="${p.demo}" target="_blank" class="btn btn-live">${icons.link} Ver Demo</a>`
-                : '';
+            const filtered = proyectos.filter(p => {
+                const matchesSearch = p.nombre.toLowerCase().includes(currentSearch) ||
+                    p.desc.toLowerCase().includes(currentSearch) ||
+                    (p.tecnologias && p.tecnologias.some(t => t.toLowerCase().includes(currentSearch)));
 
-            const tagsHtml = p.tecnologias && p.tecnologias.length > 0
-                ? p.tecnologias.map(t => `<span class="tag">${t}</span>`).join('')
-                : '';
+                let matchesFilter = true;
+                if (currentFilter === 'app') matchesFilter = p.demo !== null;
+                if (currentFilter === 'frontend') matchesFilter = p.tecnologias.some(t => ['React', 'HTML', 'Frontend', 'CSS', 'Landing', 'Web'].includes(t)) || p.demo !== null; // Heuristic
+                if (currentFilter === 'backend') matchesFilter = p.tecnologias.some(t => ['Backend', 'API', 'Firebase', 'Node', 'Database'].includes(t));
 
-            card.innerHTML = `
-                <div class="card-content">
-                    <h2>${p.demo ? '' : icons.folder + ' '}${p.nombre}</h2>
-                    <p>${p.desc || 'Sin descripción disponible.'}</p>
-                    <div class="tags">${tagsHtml}</div>
-                </div>
-                <div class="links">
-                    ${btnLive}
-                    ${p.repo ? btnRepo : ''}
-                </div>
-            `;
-            return card;
+                return matchesSearch && matchesFilter;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="empty-state">No se encontraron proyectos...</div>`;
+                return;
+            }
+
+            filtered.forEach((p, index) => {
+                const card = document.createElement('div');
+                card.className = p.demo ? 'card card-app' : 'card';
+                card.style.animationDelay = `${index * 0.05}s`; // Staggered animation
+
+                const btnRepo = p.repo
+                    ? `<a href="${p.repo}" target="_blank" class="btn btn-repo">${icons.github} Code</a>`
+                    : `<span class="btn btn-repo" style="opacity:0.5; cursor:not-allowed;">${icons.github} Privado</span>`;
+
+                const btnLive = p.demo
+                    ? `<a href="${p.demo}" target="_blank" class="btn btn-live">${icons.link} Ver Demo</a>`
+                    : '';
+
+                const tagsHtml = p.tecnologias && p.tecnologias.length > 0
+                    ? p.tecnologias.map(t => `<span class="tag">${t}</span>`).join('')
+                    : '';
+
+                card.innerHTML = `
+                    <div>
+                        <h2>${p.nombre}</h2>
+                        <div class="tags">${tagsHtml}</div>
+                        <p>${p.desc}</p>
+                    </div>
+                    <div class="links">
+                        ${btnLive}
+                        ${p.repo ? btnRepo : ''}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
         }
 
-        // Ordenar: Apps primero, luego alfabéticamente
-        // (Aunque ya separamos por contenedores, ordenamos el array fuente por si acaso)
-        // proyectos.sort((a, b) => a.nombre.localeCompare(b.nombre));
-
-        // Filtrar duplicados por nombre (por si acaso)
-        const uniqueProyectos = Array.from(new Map(proyectos.map(item => [item.nombre, item])).values());
-
-        let appCount = 0;
-        let repoCount = 0;
-
-        uniqueProyectos.forEach(p => {
-            const card = createCard(p);
-            if (p.demo) {
-                appsContainer.appendChild(card);
-                appCount++;
-            } else {
-                reposContainer.appendChild(card);
-                repoCount++;
-            }
+        // Event Listeners
+        searchInput.addEventListener('input', (e) => {
+            currentSearch = e.target.value.toLowerCase();
+            renderProjects();
         });
 
-        countApps.textContent = appCount;
-        countRepos.textContent = repoCount;
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active class
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Update filter state
+                currentFilter = btn.dataset.filter;
+                renderProjects();
+            });
+        });
+
+        // Initial Render
+        renderProjects();
 
     </script>
 </body>
