@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PoetaRivera | Full Stack Developer</title>
 
+    <!-- SEO & Open Graph -->
+    <meta name="description" content="Portfolio de PoetaRivera. Desarrollador Full Stack con proyectos en JavaScript, Firebase, React y más.">
+    <meta property="og:title" content="PoetaRivera | Full Stack Developer">
+    <meta property="og:description" content="Desarrollador apasionado por crear aplicaciones web. Explora mis proyectos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio-dev-index.vercel.app/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PoetaRivera | Full Stack Developer">
+    <meta name="twitter:description" content="Desarrollador apasionado por crear aplicaciones web. Explora mis proyectos.">
+
+    <!-- Favicon SVG inline -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text y='75' x='12' font-size='62' font-family='monospace' font-weight='bold' fill='%2338bdf8'>PR</text></svg>">
+
     <!-- Fuente Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -175,7 +188,6 @@
             gap: 0.75rem;
             overflow-x: auto;
             padding-bottom: 5px;
-            /* Scrollbar space */
         }
 
         .filter-btn {
@@ -200,6 +212,20 @@
             background-color: var(--accent);
             border-color: var(--accent);
             color: #0f172a;
+            font-weight: 600;
+        }
+
+        /* --- PROJECT COUNTER --- */
+        .project-counter {
+            width: 100%;
+            max-width: var(--container-width);
+            padding: 1rem 1.5rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .project-counter span {
+            color: var(--accent);
             font-weight: 600;
         }
 
@@ -291,6 +317,61 @@
         .card-app .tag {
             background-color: rgba(255, 255, 255, 0.15);
             color: #dbeafe;
+        }
+
+        /* --- STATUS BADGE --- */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .status-activo {
+            background: rgba(34, 197, 94, 0.15);
+            color: #86efac;
+        }
+
+        .status-activo::before {
+            background: #22c55e;
+        }
+
+        .status-archivado {
+            background: rgba(148, 163, 184, 0.15);
+            color: #94a3b8;
+        }
+
+        .status-archivado::before {
+            background: #94a3b8;
+        }
+
+        .status-wip {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fcd34d;
+        }
+
+        .status-wip::before {
+            background: #f59e0b;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
         }
 
         .links {
@@ -428,14 +509,12 @@
 
         .action-btn:hover {
             color: #ef4444;
-            /* Red for delete/action */
             border-color: #ef4444;
             background: rgba(239, 68, 68, 0.1);
         }
 
         .action-btn.hide-btn:hover {
             color: #eab308;
-            /* Yellow for hide */
             border-color: #eab308;
             background: rgba(234, 179, 8, 0.1);
         }
@@ -477,7 +556,6 @@
         <div class="role">Desarrollador</div>
         <p class="bio">
             Desarrollador apasionado por crear aplicaciones web.
-            
         </p>
         <div class="social-links">
             <a href="https://github.com/PoetaRivera" target="_blank" class="social-link" title="GitHub">
@@ -486,7 +564,6 @@
                         d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg>
             </a>
-            <!-- Puedes agregar más redes aquí -->
         </div>
     </header>
 
@@ -504,7 +581,7 @@
             <button class="filter-btn" data-filter="frontend">Frontend</button>
             <button class="filter-btn" data-filter="backend">Backend</button>
         </div>
-        <button id="settingsBtn" class="settings-btn" title="Modo Edición">
+        <button id="settingsBtn" class="settings-btn" title="Modo Edición" style="display:none;">
             <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
@@ -515,6 +592,8 @@
         </button>
     </div>
 
+    <div class="project-counter" id="projectCounter"></div>
+
     <main>
         <div id="grid" class="grid-container">
             <!-- Cards Renderizadas aquí -->
@@ -522,12 +601,28 @@
     </main>
 
     <script>
+        // --- ADMIN PASSWORD ---
+        // Hash SHA-256 de la clave. Clave por defecto: "admin"
+        // Para cambiarla: abre consola del navegador y ejecuta:
+        //   sha256("tu-nueva-clave").then(h => console.log(h))
+        // Luego reemplaza el valor de ADMIN_PASSWORD_HASH.
+        const ADMIN_PASSWORD_HASH = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
+
+        async function sha256(message) {
+            const msgBuffer = new TextEncoder().encode(message);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
         // --- DATA ---
         const proyectos = [
             {
                 nombre: "Login Firebase (pedido-login)",
                 desc: "Sistema autenticación robusto con Firebase Auth y React.",
                 tecnologias: ["Firebase", "React", "Auth"],
+                categorias: ["app", "frontend"],
+                estado: "activo",
                 repo: "https://github.com/PoetaRivera/pedido-login",
                 demo: "https://login-firebase-87f94.web.app"
             },
@@ -535,6 +630,8 @@
                 nombre: "Multisalon",
                 desc: "Plataforma integral SaaS para gestión de salones de belleza.",
                 tecnologias: ["JavaScript", "SaaS", "Frontend"],
+                categorias: ["app", "frontend"],
+                estado: "activo",
                 repo: "https://github.com/PoetaRivera/Salon-de-belleza",
                 demo: "https://misalon.misalons.com"
             },
@@ -542,6 +639,8 @@
                 nombre: "Asistente Poético",
                 desc: "Herramienta que analiza métrica y conteo silábico de poemas.",
                 tecnologias: ["JavaScript", "Algoritmos", "Literatura"],
+                categorias: ["app", "frontend"],
+                estado: "activo",
                 repo: "https://github.com/PoetaRivera/Asistente-Poetico",
                 demo: "https://asistentepoetico.web.app"
             },
@@ -549,6 +648,8 @@
                 nombre: "Financiera App",
                 desc: "Web para control de finanzas personales y gastos.",
                 tecnologias: ["JavaScript", "Finance"],
+                categorias: ["app", "frontend"],
+                estado: "activo",
                 repo: "https://github.com/PoetaRivera/financiera",
                 demo: "https://financiera-ten.vercel.app"
             },
@@ -556,6 +657,8 @@
                 nombre: "Pedidos Frontend",
                 desc: "Interfaz reactiva para gestión de pedidos en tiempo real.",
                 tecnologias: ["JavaScript", "UI/UX"],
+                categorias: ["app", "frontend"],
+                estado: "activo",
                 repo: "https://github.com/PoetaRivera/pedidosFrontend",
                 demo: "https://pedidos-frontend-eight.vercel.app"
             },
@@ -563,6 +666,8 @@
                 nombre: "Poesía Isela Escárcega",
                 desc: "Portfolio digital de la poeta Isela Escárcega.",
                 tecnologias: ["Web", "Portfolio"],
+                categorias: ["app", "frontend"],
+                estado: "activo",
                 repo: null,
                 demo: "https://poesiaiselaescarcega.web.app"
             },
@@ -570,6 +675,8 @@
                 nombre: "Poesía Nelson Rivera",
                 desc: "Web de difusión de la obra de Nelson Rivera.",
                 tecnologias: ["Web", "Cultura"],
+                categorias: ["app", "frontend"],
+                estado: "activo",
                 repo: null,
                 demo: "https://poetarivera.github.io"
             },
@@ -577,6 +684,8 @@
                 nombre: "Backend User Firebase",
                 desc: "Microservicio backend para gestión de usuarios.",
                 tecnologias: ["Backend", "Firebase"],
+                categorias: ["app", "backend"],
+                estado: "activo",
                 repo: null,
                 demo: "https://backenduserfirebase.web.app"
             },
@@ -584,13 +693,17 @@
                 nombre: "Portfolio Dev (Este sitio)",
                 desc: "Directorio de proyectos personal.",
                 tecnologias: ["HTML", "CSS", "Portfolio"],
+                categorias: ["app", "frontend"],
+                estado: "activo",
                 repo: "https://github.com/PoetaRivera/portfolio-dev-index",
-                demo: "hhttps://portfolio-dev-index.vercel.app/"
+                demo: "https://portfolio-dev-index.vercel.app/"
             },
             {
                 nombre: "Landing Page Frontend",
                 desc: "Landing page optimizada para adminMisalons.",
                 tecnologias: ["Landing", "Marketing"],
+                categorias: ["app", "frontend"],
+                estado: "activo",
                 repo: "https://github.com/PoetaRivera/landing-frontend",
                 demo: "https://adminmisalons.web.app/"
             },
@@ -598,6 +711,8 @@
                 nombre: "Landing Backend",
                 desc: "API y servicios para landing page.",
                 tecnologias: ["Backend", "API"],
+                categorias: ["backend"],
+                estado: "activo",
                 repo: "https://github.com/PoetaRivera/landing-backend",
                 demo: null
             },
@@ -605,6 +720,8 @@
                 nombre: "Backend Salon de Belleza",
                 desc: "Núcleo lógico y BD para Multisalon.",
                 tecnologias: ["Backend", "Database"],
+                categorias: ["backend"],
+                estado: "activo",
                 repo: "https://github.com/PoetaRivera/backend-salon-de-belleza",
                 demo: null
             },
@@ -612,6 +729,8 @@
                 nombre: "Gestor de Comentarios",
                 desc: "Sistema modular para comentarios en blogs.",
                 tecnologias: ["Tooling"],
+                categorias: ["frontend", "backend"],
+                estado: "activo",
                 repo: "https://github.com/PoetaRivera/gestordecomentarios",
                 demo: null
             },
@@ -619,13 +738,17 @@
                 nombre: "Servidor Comentarios",
                 desc: "API RESTful para servicio de comentarios.",
                 tecnologias: ["Backend", "API"],
+                categorias: ["backend"],
+                estado: "activo",
                 repo: "https://github.com/PoetaRivera/ServidorComentarios",
                 demo: null
             },
             {
                 nombre: "Asistente Poético (Legacy)",
-                desc: "Versión anterior del algortimo (Deprecado).",
+                desc: "Versión anterior del algoritmo (Deprecado).",
                 tecnologias: ["Legacy"],
+                categorias: [],
+                estado: "archivado",
                 repo: "https://github.com/PoetaRivera/asistente-poetico-ultima",
                 demo: null
             }
@@ -640,11 +763,18 @@
             trash: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>`
         };
 
+        const STATUS_LABELS = {
+            activo: "Activo",
+            archivado: "Archivado",
+            wip: "En progreso"
+        };
+
         // --- LOGIC ---
         const grid = document.getElementById('grid');
         const searchInput = document.getElementById('searchInput');
         const filterBtns = document.querySelectorAll('.filter-btn');
         const settingsBtn = document.getElementById('settingsBtn');
+        const projectCounter = document.getElementById('projectCounter');
 
         let currentFilter = 'all';
         let currentSearch = '';
@@ -653,21 +783,33 @@
         let hiddenProjects = JSON.parse(localStorage.getItem('hiddenProjects') || '[]');
         let deletedProjects = JSON.parse(localStorage.getItem('deletedProjects') || '[]');
 
-        // Check for Admin Mode
+        // --- ADMIN MODE WITH PASSWORD ---
         const urlParams = new URLSearchParams(window.location.search);
         const isAdmin = urlParams.has('admin');
+        let isAdminAuthenticated = sessionStorage.getItem('adminAuth') === 'true';
 
-        if (isAdmin && settingsBtn) {
+        async function initAdminMode() {
+            if (!isAdmin) return;
+
+            if (!isAdminAuthenticated) {
+                const input = prompt("Clave de administrador:");
+                if (!input) return;
+                const hash = await sha256(input);
+                if (hash !== ADMIN_PASSWORD_HASH) {
+                    alert("Clave incorrecta.");
+                    return;
+                }
+                sessionStorage.setItem('adminAuth', 'true');
+                isAdminAuthenticated = true;
+            }
+
             settingsBtn.style.display = 'flex';
-        } else if (settingsBtn) {
-            settingsBtn.style.display = 'none';
         }
 
         function renderProjects() {
             grid.innerHTML = '';
 
             const filtered = proyectos.filter(p => {
-                // Filter Deleted
                 if (deletedProjects.includes(p.nombre)) return false;
 
                 const matchesSearch = p.nombre.toLowerCase().includes(currentSearch) ||
@@ -676,11 +818,16 @@
 
                 let matchesFilter = true;
                 if (currentFilter === 'app') matchesFilter = p.demo !== null;
-                if (currentFilter === 'frontend') matchesFilter = p.tecnologias.some(t => ['React', 'HTML', 'Frontend', 'CSS', 'Landing', 'Web'].includes(t)) || p.demo !== null; // Heuristic
-                if (currentFilter === 'backend') matchesFilter = p.tecnologias.some(t => ['Backend', 'API', 'Firebase', 'Node', 'Database'].includes(t));
+                if (currentFilter === 'frontend') matchesFilter = p.categorias.includes('frontend');
+                if (currentFilter === 'backend') matchesFilter = p.categorias.includes('backend');
 
                 return matchesSearch && matchesFilter;
             });
+
+            // Update counter
+            const visibleCount = filtered.filter(p => !hiddenProjects.includes(p.nombre) || isEditMode).length;
+            const totalCount = proyectos.filter(p => !deletedProjects.includes(p.nombre)).length;
+            projectCounter.innerHTML = `Mostrando <span>${visibleCount}</span> de <span>${totalCount}</span> proyectos`;
 
             if (filtered.length === 0) {
                 grid.innerHTML = `<div class="empty-state">No se encontraron proyectos...</div>`;
@@ -690,14 +837,13 @@
             filtered.forEach((p, index) => {
                 const isHidden = hiddenProjects.includes(p.nombre);
 
-                // If not in edit mode and hidden, skip it
                 if (!isEditMode && isHidden) return;
 
                 const card = document.createElement('div');
                 card.className = p.demo ? 'card card-app' : 'card';
                 if (isHidden) card.classList.add('hidden-card');
 
-                card.style.animationDelay = `${index * 0.05}s`; // Staggered animation
+                card.style.animationDelay = `${index * 0.05}s`;
 
                 const btnRepo = p.repo
                     ? `<a href="${p.repo}" target="_blank" class="btn btn-repo">${icons.github} Code</a>`
@@ -711,7 +857,10 @@
                     ? p.tecnologias.map(t => `<span class="tag">${t}</span>`).join('')
                     : '';
 
-                // Action Buttons
+                const statusBadge = p.estado
+                    ? `<div class="status-badge status-${p.estado}">${STATUS_LABELS[p.estado] || p.estado}</div>`
+                    : '';
+
                 const actionsHtml = `
                     <div class="card-actions">
                         <button class="action-btn hide-btn" onclick="toggleHide('${p.nombre}')" title="${isHidden ? 'Mostrar' : 'Ocultar'}">
@@ -727,6 +876,7 @@
                     ${actionsHtml}
                     <div>
                         <h2>${p.nombre}</h2>
+                        ${statusBadge}
                         <div class="tags">${tagsHtml}</div>
                         <p>${p.desc}</p>
                     </div>
@@ -764,7 +914,7 @@
                 isEditMode = !isEditMode;
                 document.body.classList.toggle('edit-mode', isEditMode);
                 settingsBtn.classList.toggle('active', isEditMode);
-                renderProjects(); // Re-render to show/hide hidden items based on mode
+                renderProjects();
             });
         }
 
@@ -775,19 +925,15 @@
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update active class
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
-                // Update filter state
                 currentFilter = btn.dataset.filter;
                 renderProjects();
             });
         });
 
-        // Initial Render
-        renderProjects();
-
+        // Init
+        initAdminMode().then(() => renderProjects());
 
     </script>
 </body>
