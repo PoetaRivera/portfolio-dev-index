@@ -61,11 +61,7 @@
             --status-wip-color: #92400e;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: var(--font-main);
@@ -78,7 +74,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         header {
             width: 100%;
             background: var(--header-bg);
@@ -92,10 +88,7 @@
             transition: background 0.3s, border-color 0.3s;
         }
 
-        .profile-container {
-            position: relative;
-            margin-bottom: 1.5rem;
-        }
+        .profile-container { position: relative; margin-bottom: 1.5rem; }
 
         .profile-img {
             width: 120px;
@@ -140,21 +133,11 @@
             margin-bottom: 2rem;
         }
 
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-        }
+        .social-links { display: flex; gap: 1.5rem; }
+        .social-link { color: var(--text-secondary); transition: color 0.2s; }
+        .social-link:hover { color: var(--accent); }
 
-        .social-link {
-            color: var(--text-secondary);
-            transition: color 0.2s;
-        }
-
-        .social-link:hover {
-            color: var(--accent);
-        }
-
-        /* --- CONTROLS BAR (sticky wrapper, full-width background) --- */
+        /* --- CONTROLS BAR --- */
         .controls-bar {
             width: 100%;
             position: sticky;
@@ -234,10 +217,7 @@
             white-space: nowrap;
         }
 
-        .filter-btn:hover {
-            border-color: var(--text-secondary);
-            color: var(--text-main);
-        }
+        .filter-btn:hover { border-color: var(--text-secondary); color: var(--text-main); }
 
         .filter-btn.active {
             background-color: var(--accent);
@@ -264,15 +244,27 @@
             background-size: 16px;
         }
 
-        .sort-select:focus {
-            outline: none;
-            border-color: var(--accent);
+        .sort-select:focus { outline: none; border-color: var(--accent); }
+
+        .controls-right { display: flex; gap: 0.5rem; align-items: center; }
+
+        .theme-btn {
+            background: transparent;
+            border: 1px solid var(--repo-border);
+            color: var(--text-secondary);
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .controls-right {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
+        .theme-btn:hover {
+            background-color: var(--card-bg);
+            color: var(--accent);
+            border-color: var(--accent);
         }
 
         /* --- PROJECT COUNTER --- */
@@ -284,10 +276,7 @@
             font-size: 0.9rem;
         }
 
-        .project-counter span {
-            color: var(--accent);
-            font-weight: 600;
-        }
+        .project-counter span { color: var(--accent); font-weight: 600; }
 
         /* --- GRID --- */
         main {
@@ -313,7 +302,6 @@
             justify-content: space-between;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             animation: fadeInUp 0.6s ease-out backwards;
-            position: relative;
         }
 
         .card:hover {
@@ -343,32 +331,14 @@
             font-weight: 600;
             color: var(--text-main);
             margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .card-app h2 {
-            color: white;
-        }
+        .card-app h2 { color: white; }
 
-        .card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
+        .card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        .card-app p { color: #bfdbfe; }
 
-        .card-app p {
-            color: #bfdbfe;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
 
         .tag {
             font-size: 0.75rem;
@@ -379,14 +349,9 @@
             color: var(--text-secondary);
         }
 
-        [data-theme="light"] .tag {
-            background-color: rgba(0, 0, 0, 0.06);
-        }
+        [data-theme="light"] .tag { background-color: rgba(0, 0, 0, 0.06); }
 
-        .card-app .tag {
-            background-color: rgba(255, 255, 255, 0.15);
-            color: #dbeafe;
-        }
+        .card-app .tag { background-color: rgba(255, 255, 255, 0.15); color: #dbeafe; }
 
         /* --- STATUS BADGE --- */
         .status-badge {
@@ -410,44 +375,16 @@
             display: inline-block;
         }
 
-        .status-activo {
-            background: rgba(34, 197, 94, 0.15);
-            color: var(--status-active-color);
-        }
+        .status-activo { background: rgba(34, 197, 94, 0.15); color: var(--status-active-color); }
+        .status-activo::before { background: #22c55e; }
+        .status-archivado { background: rgba(148, 163, 184, 0.15); color: var(--status-archived-color); }
+        .status-archivado::before { background: #94a3b8; }
+        .status-wip { background: rgba(251, 191, 36, 0.15); color: var(--status-wip-color); }
+        .status-wip::before { background: #f59e0b; animation: pulse 1.5s infinite; }
 
-        .status-activo::before {
-            background: #22c55e;
-        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-        .status-archivado {
-            background: rgba(148, 163, 184, 0.15);
-            color: var(--status-archived-color);
-        }
-
-        .status-archivado::before {
-            background: #94a3b8;
-        }
-
-        .status-wip {
-            background: rgba(251, 191, 36, 0.15);
-            color: var(--status-wip-color);
-        }
-
-        .status-wip::before {
-            background: #f59e0b;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        .links {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: auto;
-        }
+        .links { display: flex; gap: 0.75rem; margin-top: auto; }
 
         .btn {
             display: flex;
@@ -469,130 +406,25 @@
             border: 1px solid var(--repo-border);
         }
 
-        [data-theme="light"] .btn-repo {
-            background-color: rgba(0, 0, 0, 0.04);
-        }
+        [data-theme="light"] .btn-repo { background-color: rgba(0, 0, 0, 0.04); }
+        .btn-repo:hover { background-color: rgba(255, 255, 255, 0.1); border-color: var(--text-secondary); }
+        [data-theme="light"] .btn-repo:hover { background-color: rgba(0, 0, 0, 0.08); }
 
-        .btn-repo:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: var(--text-secondary);
-        }
+        .btn-live { background-color: var(--accent); color: #011827; }
+        .btn-live:hover { background-color: #7dd3fc; transform: scale(1.02); box-shadow: 0 0 15px rgba(56, 189, 248, 0.4); }
 
-        [data-theme="light"] .btn-repo:hover {
-            background-color: rgba(0, 0, 0, 0.08);
-        }
-
-        .btn-live {
-            background-color: var(--accent);
-            color: #011827;
-        }
-
-        .btn-live:hover {
-            background-color: #7dd3fc;
-            transform: scale(1.02);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
-        }
-
-        .icon {
-            width: 18px;
-            height: 18px;
-        }
+        .icon { width: 18px; height: 18px; }
 
         /* --- ANIMATIONS --- */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .empty-state {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 4rem;
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-        }
-
-        /* --- MANAGEMENT MODALS & BUTTONS --- */
-        .settings-btn {
-            background: transparent;
-            border: 1px solid var(--repo-border);
-            color: var(--text-secondary);
-            padding: 0.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .settings-btn:hover,
-        .settings-btn.active {
-            background-color: var(--card-bg);
-            color: var(--accent);
-            border-color: var(--accent);
-        }
-
-        .card-actions {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            display: flex;
-            gap: 0.5rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s;
-            z-index: 10;
-        }
-
-        .edit-mode .card-actions {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .action-btn {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--repo-border);
-            color: var(--text-secondary);
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            backdrop-filter: blur(4px);
-            transition: all 0.2s;
-        }
-
-        .action-btn:hover {
-            color: #ef4444;
-            border-color: #ef4444;
-            background: rgba(239, 68, 68, 0.1);
-        }
-
-        .action-btn.hide-btn:hover {
-            color: #eab308;
-            border-color: #eab308;
-            background: rgba(234, 179, 8, 0.1);
-        }
-
-        .card.hidden-card {
-            opacity: 0.4;
-            filter: grayscale(100%);
-            border-style: dashed;
-        }
+        .empty-state { grid-column: 1 / -1; text-align: center; padding: 4rem; color: var(--text-secondary); font-size: 1.2rem; }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .controls { flex-direction: column; align-items: stretch; }
             .search-bar { max-width: 100%; }
-            .filters { padding-bottom: 4px; }
             .controls-right { justify-content: flex-end; }
         }
     </style>
@@ -606,14 +438,11 @@
         </div>
         <h1>PoetaRivera</h1>
         <div class="role">Desarrollador</div>
-        <p class="bio">
-            Desarrollador apasionado por crear aplicaciones web.
-        </p>
+        <p class="bio">Desarrollador apasionado por crear aplicaciones web.</p>
         <div class="social-links">
             <a href="https://github.com/PoetaRivera" target="_blank" class="social-link" title="GitHub">
                 <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
             </a>
         </div>
@@ -640,19 +469,10 @@
                 </select>
             </div>
             <div class="controls-right">
-                <button id="themeBtn" class="settings-btn" title="Modo claro">
+                <button id="themeBtn" class="theme-btn" title="Modo claro">
                     <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                </button>
-                <button id="settingsBtn" class="settings-btn" title="Modo Edición" style="display:none;">
-                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
-                        </path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                     </svg>
                 </button>
             </div>
@@ -662,22 +482,10 @@
     <div class="project-counter" id="projectCounter"></div>
 
     <main>
-        <div id="grid" class="grid-container">
-            <!-- Cards Renderizadas aquí -->
-        </div>
+        <div id="grid" class="grid-container"></div>
     </main>
 
     <script>
-        // --- ADMIN PASSWORD ---
-        const ADMIN_PASSWORD_HASH = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
-
-        async function sha256(message) {
-            const msgBuffer = new TextEncoder().encode(message);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        }
-
         // --- DATA ---
         const proyectos = [
             {
@@ -802,20 +610,16 @@
         // --- ICONS ---
         const icons = {
             github: `<svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>`,
-            link: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>`,
-            eye: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>`,
-            eyeOff: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" /></svg>`,
-            trash: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>`
+            link: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>`
         };
 
         const STATUS_LABELS = { activo: "Activo", archivado: "Archivado", wip: "En progreso" };
         const STATUS_ORDER = { activo: 0, wip: 1, archivado: 2 };
 
-        // --- DOM REFS ---
+        // --- DOM ---
         const grid = document.getElementById('grid');
         const searchInput = document.getElementById('searchInput');
         const filterBtns = document.querySelectorAll('.filter-btn');
-        const settingsBtn = document.getElementById('settingsBtn');
         const sortSelect = document.getElementById('sortSelect');
         const themeBtn = document.getElementById('themeBtn');
         const projectCounter = document.getElementById('projectCounter');
@@ -824,10 +628,6 @@
         let currentFilter = 'all';
         let currentSearch = '';
         let currentSort = 'default';
-        let isEditMode = false;
-
-        let hiddenProjects = JSON.parse(localStorage.getItem('hiddenProjects') || '[]');
-        let deletedProjects = JSON.parse(localStorage.getItem('deletedProjects') || '[]');
 
         // --- THEME ---
         const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -852,34 +652,11 @@
             }
         }
 
-        // --- ADMIN MODE ---
-        const urlParams = new URLSearchParams(window.location.search);
-        const isAdmin = urlParams.has('admin');
-        let isAdminAuthenticated = sessionStorage.getItem('adminAuth') === 'true';
-
-        async function initAdminMode() {
-            if (!isAdmin) return;
-            if (!isAdminAuthenticated) {
-                const input = prompt("Clave de administrador:");
-                if (!input) return;
-                const hash = await sha256(input);
-                if (hash !== ADMIN_PASSWORD_HASH) {
-                    alert("Clave incorrecta.");
-                    return;
-                }
-                sessionStorage.setItem('adminAuth', 'true');
-                isAdminAuthenticated = true;
-            }
-            settingsBtn.style.display = 'flex';
-        }
-
         // --- RENDER ---
         function renderProjects() {
             grid.innerHTML = '';
 
             let filtered = proyectos.filter(p => {
-                if (deletedProjects.includes(p.nombre)) return false;
-
                 const matchesSearch = p.nombre.toLowerCase().includes(currentSearch) ||
                     p.desc.toLowerCase().includes(currentSearch) ||
                     (p.tecnologias && p.tecnologias.some(t => t.toLowerCase().includes(currentSearch)));
@@ -900,9 +677,7 @@
                 );
             }
 
-            const visibleCount = filtered.filter(p => !hiddenProjects.includes(p.nombre) || isEditMode).length;
-            const totalCount = proyectos.filter(p => !deletedProjects.includes(p.nombre)).length;
-            projectCounter.innerHTML = `Mostrando <span>${visibleCount}</span> de <span>${totalCount}</span> proyectos`;
+            projectCounter.innerHTML = `Mostrando <span>${filtered.length}</span> de <span>${proyectos.length}</span> proyectos`;
 
             if (filtered.length === 0) {
                 grid.innerHTML = `<div class="empty-state">No se encontraron proyectos...</div>`;
@@ -910,14 +685,9 @@
             }
 
             filtered.forEach((p, index) => {
-                const isHidden = hiddenProjects.includes(p.nombre);
-                if (!isEditMode && isHidden) return;
-
                 const card = document.createElement('div');
                 card.className = p.demo ? 'card card-app' : 'card';
-                if (isHidden) card.classList.add('hidden-card');
                 card.style.animationDelay = `${index * 0.05}s`;
-                card.dataset.nombre = p.nombre;
 
                 const btnRepo = p.repo
                     ? `<a href="${p.repo}" target="_blank" class="btn btn-repo">${icons.github} Code</a>`
@@ -935,19 +705,7 @@
                     ? `<div class="status-badge status-${p.estado}">${STATUS_LABELS[p.estado] || p.estado}</div>`
                     : '';
 
-                const actionsHtml = `
-                    <div class="card-actions">
-                        <button class="action-btn hide-btn" data-action="hide" title="${isHidden ? 'Mostrar' : 'Ocultar'}">
-                            ${isHidden ? icons.eyeOff : icons.eye}
-                        </button>
-                        <button class="action-btn" data-action="delete" title="Eliminar">
-                            ${icons.trash}
-                        </button>
-                    </div>
-                `;
-
                 card.innerHTML = `
-                    ${actionsHtml}
                     <div>
                         <h2>${p.nombre}</h2>
                         ${statusBadge}
@@ -963,46 +721,7 @@
             });
         }
 
-        // --- EVENT DELEGATION for card actions (fixes XSS via onclick) ---
-        grid.addEventListener('click', (e) => {
-            const btn = e.target.closest('[data-action]');
-            if (!btn) return;
-            const card = btn.closest('[data-nombre]');
-            if (!card) return;
-            const nombre = card.dataset.nombre;
-            if (btn.dataset.action === 'hide') toggleHide(nombre);
-            if (btn.dataset.action === 'delete') deleteProject(nombre);
-        });
-
-        // --- ACTIONS ---
-        function toggleHide(nombre) {
-            if (hiddenProjects.includes(nombre)) {
-                hiddenProjects = hiddenProjects.filter(n => n !== nombre);
-            } else {
-                hiddenProjects.push(nombre);
-            }
-            localStorage.setItem('hiddenProjects', JSON.stringify(hiddenProjects));
-            renderProjects();
-        }
-
-        function deleteProject(nombre) {
-            if (confirm(`¿Eliminar "${nombre}" de tu vista?`)) {
-                deletedProjects.push(nombre);
-                localStorage.setItem('deletedProjects', JSON.stringify(deletedProjects));
-                renderProjects();
-            }
-        }
-
         // --- EVENT LISTENERS ---
-        if (settingsBtn) {
-            settingsBtn.addEventListener('click', () => {
-                isEditMode = !isEditMode;
-                document.body.classList.toggle('edit-mode', isEditMode);
-                settingsBtn.classList.toggle('active', isEditMode);
-                renderProjects();
-            });
-        }
-
         searchInput.addEventListener('input', (e) => {
             currentSearch = e.target.value.toLowerCase();
             renderProjects();
@@ -1022,8 +741,7 @@
             renderProjects();
         });
 
-        // --- INIT ---
-        initAdminMode().then(() => renderProjects());
+        renderProjects();
     </script>
 </body>
 
