@@ -114,6 +114,13 @@
 - Multisalon: corregido de "Dominio propio" a Firebase + Koyeb
 - Landing Misalons: corregido de "Firebase" a Firebase + Koyeb
 
+## Deploy (2026-05-10)
+- Commit `94b5742`: feat — badges de infraestructura + verificacion de hosting
+- Push a main ✓
+- Deploy en Vercel automatico verificado ✓ (infra-frontend presente, Pedidos Frontend eliminado)
+- .gitignore actualizado: protege `token vercel.txt`
+- `paraEditarLeeEsto.txt` actualizado: removidas instrucciones obsoletas de modo admin
+
 ## Proximos pasos opcionales (baja prioridad)
 - [ ] Subir og.png real a Vercel para completar previews sociales
 - [ ] Foto de perfil real en lugar de iniciales "PR"
