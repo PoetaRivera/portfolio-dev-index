@@ -79,8 +79,41 @@
 - `og:image` y `twitter:image` apuntando a `/og.png` (pendiente: subir el archivo imagen)
 - `twitter:card` cambiado a `summary_large_image`
 
+### [REFACTOR] #13 — Modo admin eliminado
+- Se eliminó toda la lógica: hash, sha256, sessionStorage, hiddenProjects, deletedProjects, card-actions, edit-mode
+- No aportaba valor real sin backend para persistir cambios
+
+## Deploy (2026-04-20)
+- Push a main ✓
+- Deploy en Vercel ✓
+
+---
+
+## Mejoras implementadas (2026-05-09)
+
+### [MEDIA] #14 — Badge de hosting en tarjetas
+- Agregado campo `hosting` a cada proyecto (Railway, Vercel, Firebase, GitHub Pages, Dominio propio, o null si no tiene demo)
+- Badge visual en cada tarjeta debajo del badge de estado, con estilo acorde al tema (dark/light)
+- Proyectos sin demo (Gestor de Comentarios, Asistente Poético Legacy) no muestran badge de hosting
+
+### [ALTA] #15 — Badges de infraestructura (frontend/backend/BD)
+- Reemplazado el campo único `hosting` por `infraestructura: { frontend, backend, baseDeDatos }` en todos los proyectos
+- Cada capa tiene su propio badge con color distintivo: azul (frontend ▲), verde (backend ◆), naranja (BD ■)
+- Verificada la arquitectura real de cada proyecto leyendo el código fuente:
+  - PageMusic: Railway full-stack con SQLite
+  - Sistema Contable SV: Railway full-stack con PostgreSQL
+  - Multisalon: Firebase (frontend) + Koyeb (backend) + Firestore
+  - Landing Misalons: Firebase (frontend) + Koyeb (backend) + Firestore
+  - Gestor de Comentarios: Vercel (backend) + Firestore
+  - Resto: frontend-only (Firebase, Vercel, GitHub Pages)
+- Eliminado "Pedidos Frontend" del portfolio (no clonado localmente, el usuario decidió quitarlo)
+- Login Firebase y Asistente Poético Legacy archivados sin infraestructura visible
+
+### Correcciones de hosting verificadas
+- Sistema Contable SV: corregido de "Dominio propio" a Railway
+- Multisalon: corregido de "Dominio propio" a Firebase + Koyeb
+- Landing Misalons: corregido de "Firebase" a Firebase + Koyeb
+
 ## Proximos pasos opcionales (baja prioridad)
 - [ ] Subir og.png real a Vercel para completar previews sociales
-- [ ] Ordenamiento drag-and-drop de proyectos
-- [ ] Separar CSS y JS en archivos propios
 - [ ] Foto de perfil real en lugar de iniciales "PR"

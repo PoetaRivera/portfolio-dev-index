@@ -382,6 +382,51 @@
         .status-wip { background: rgba(251, 191, 36, 0.15); color: var(--status-wip-color); }
         .status-wip::before { background: #f59e0b; animation: pulse 1.5s infinite; }
 
+        .infra-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .infra-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            letter-spacing: 0.3px;
+        }
+
+        .infra-frontend {
+            background: rgba(56, 189, 248, 0.12);
+            color: #38bdf8;
+        }
+        [data-theme="light"] .infra-frontend {
+            background: rgba(2, 132, 199, 0.12);
+            color: #0284c7;
+        }
+
+        .infra-backend {
+            background: rgba(34, 197, 94, 0.12);
+            color: #4ade80;
+        }
+        [data-theme="light"] .infra-backend {
+            background: rgba(21, 128, 61, 0.12);
+            color: #15803d;
+        }
+
+        .infra-db {
+            background: rgba(251, 146, 60, 0.12);
+            color: #fb923c;
+        }
+        [data-theme="light"] .infra-db {
+            background: rgba(194, 65, 12, 0.12);
+            color: #c2410c;
+        }
+
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
         .links { display: flex; gap: 0.75rem; margin-top: auto; }
@@ -494,6 +539,7 @@
                 tecnologias: ["React", "Vite", "Tailwind", "Node.js"],
                 categorias: ["app", "frontend"],
                 estado: "activo",
+                infraestructura: { frontend: "Railway", backend: "Railway", baseDeDatos: "SQLite" },
                 repo: "https://github.com/PoetaRivera/pagemusic",
                 demo: "https://pagemusic-production.up.railway.app/"
             },
@@ -503,6 +549,7 @@
                 tecnologias: ["React", "Frontend"],
                 categorias: ["app", "frontend"],
                 estado: "activo",
+                infraestructura: { frontend: "Railway", backend: "Railway", baseDeDatos: "PostgreSQL" },
                 repo: null,
                 demo: "https://sistemacontablesv.com"
             },
@@ -512,6 +559,7 @@
                 tecnologias: ["JavaScript", "SaaS", "Frontend"],
                 categorias: ["app", "frontend"],
                 estado: "activo",
+                infraestructura: { frontend: "Firebase", backend: "Koyeb", baseDeDatos: "Firestore" },
                 repo: null,
                 demo: "https://misalon.misalons.com"
             },
@@ -520,9 +568,10 @@
                 desc: "Sistema autenticación robusto con Firebase Auth y React.",
                 tecnologias: ["Firebase", "React", "Auth"],
                 categorias: ["app", "frontend"],
-                estado: "activo",
+                estado: "archivado",
+                infraestructura: { frontend: null, backend: null, baseDeDatos: null },
                 repo: "https://github.com/PoetaRivera/pedido-login",
-                demo: "https://login-firebase-87f94.web.app"
+                demo: null
             },
             {
                 nombre: "Asistente Poético",
@@ -530,6 +579,7 @@
                 tecnologias: ["JavaScript", "Algoritmos", "Literatura"],
                 categorias: ["app", "frontend"],
                 estado: "activo",
+                infraestructura: { frontend: "Firebase", backend: null, baseDeDatos: null },
                 repo: "https://github.com/PoetaRivera/Asistente-Poetico",
                 demo: "https://asistentepoetico.web.app"
             },
@@ -539,17 +589,9 @@
                 tecnologias: ["JavaScript", "Finance"],
                 categorias: ["app", "frontend"],
                 estado: "activo",
+                infraestructura: { frontend: "Vercel", backend: null, baseDeDatos: null },
                 repo: "https://github.com/PoetaRivera/financiera",
                 demo: "https://financiera-ten.vercel.app"
-            },
-            {
-                nombre: "Pedidos Frontend",
-                desc: "Interfaz reactiva para gestión de pedidos en tiempo real.",
-                tecnologias: ["JavaScript", "UI/UX"],
-                categorias: ["app", "frontend"],
-                estado: "activo",
-                repo: "https://github.com/PoetaRivera/pedidosFrontend",
-                demo: "https://pedidos-frontend-eight.vercel.app"
             },
             {
                 nombre: "Poesía Isela Escárcega",
@@ -557,6 +599,7 @@
                 tecnologias: ["Web", "Portfolio"],
                 categorias: ["app", "frontend"],
                 estado: "activo",
+                infraestructura: { frontend: "Firebase", backend: null, baseDeDatos: null },
                 repo: null,
                 demo: "https://poesiaiselaescarcega.web.app"
             },
@@ -566,6 +609,7 @@
                 tecnologias: ["Web", "Cultura"],
                 categorias: ["app", "frontend"],
                 estado: "activo",
+                infraestructura: { frontend: "GitHub Pages", backend: null, baseDeDatos: null },
                 repo: null,
                 demo: "https://poetarivera.github.io"
             },
@@ -575,6 +619,7 @@
                 tecnologias: ["HTML", "CSS", "Portfolio"],
                 categorias: ["app", "frontend"],
                 estado: "activo",
+                infraestructura: { frontend: "Vercel", backend: null, baseDeDatos: null },
                 repo: "https://github.com/PoetaRivera/portfolio-dev-index",
                 demo: "https://portfolio-dev-index.vercel.app/"
             },
@@ -584,6 +629,7 @@
                 tecnologias: ["Landing", "Marketing"],
                 categorias: ["app", "frontend"],
                 estado: "activo",
+                infraestructura: { frontend: "Firebase", backend: "Koyeb", baseDeDatos: "Firestore" },
                 repo: "https://github.com/PoetaRivera/landing-frontend",
                 demo: "https://adminmisalons.web.app/"
             },
@@ -593,6 +639,7 @@
                 tecnologias: ["JavaScript", "Node.js", "Backend"],
                 categorias: ["backend"],
                 estado: "activo",
+                infraestructura: { frontend: null, backend: "Vercel", baseDeDatos: "Firestore" },
                 repo: "https://github.com/PoetaRivera/gestordecomentarios",
                 demo: null
             },
@@ -602,6 +649,7 @@
                 tecnologias: ["Legacy"],
                 categorias: [],
                 estado: "archivado",
+                infraestructura: { frontend: null, backend: null, baseDeDatos: null },
                 repo: "https://github.com/PoetaRivera/asistente-poetico-ultima",
                 demo: null
             }
@@ -705,10 +753,20 @@
                     ? `<div class="status-badge status-${p.estado}">${STATUS_LABELS[p.estado] || p.estado}</div>`
                     : '';
 
+                const infra = p.infraestructura;
+                let infraBadgesHtml = '';
+                if (infra) {
+                    if (infra.frontend) infraBadgesHtml += `<span class="infra-badge infra-frontend">▲ ${infra.frontend}</span>`;
+                    if (infra.backend) infraBadgesHtml += `<span class="infra-badge infra-backend">◆ ${infra.backend}</span>`;
+                    if (infra.baseDeDatos) infraBadgesHtml += `<span class="infra-badge infra-db">■ ${infra.baseDeDatos}</span>`;
+                }
+                infraBadgesHtml = infraBadgesHtml ? `<div class="infra-badges">${infraBadgesHtml}</div>` : '';
+
                 card.innerHTML = `
                     <div>
                         <h2>${p.nombre}</h2>
                         ${statusBadge}
+                        ${infraBadgesHtml}
                         <div class="tags">${tagsHtml}</div>
                         <p>${p.desc}</p>
                     </div>
