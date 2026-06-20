@@ -4,25 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoetaRivera | Full Stack Developer</title>
+    <title>PoetaRivera | Desarrollador Full Stack</title>
 
-    <!-- SEO & Open Graph -->
-    <meta name="description" content="Portfolio de PoetaRivera. Desarrollador Full Stack con proyectos en JavaScript, Firebase, React y más.">
+    <meta name="description" content="Portfolio profesional de PoetaRivera, desarrollador Full Stack enfocado en aplicaciones web, SaaS, Firebase, React, Node.js, bases de datos y despliegues en producción.">
     <link rel="canonical" href="https://portfolio-dev-index.vercel.app/">
-    <meta property="og:title" content="PoetaRivera | Full Stack Developer">
-    <meta property="og:description" content="Desarrollador apasionado por crear aplicaciones web. Explora mis proyectos.">
+    <meta property="og:title" content="PoetaRivera | Desarrollador Full Stack">
+    <meta property="og:description" content="Proyectos reales, aplicaciones desplegadas y evidencia técnica para empresas que buscan programadores web.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://portfolio-dev-index.vercel.app/">
     <meta property="og:image" content="https://portfolio-dev-index.vercel.app/og.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PoetaRivera | Full Stack Developer">
-    <meta name="twitter:description" content="Desarrollador apasionado por crear aplicaciones web. Explora mis proyectos.">
+    <meta name="twitter:title" content="PoetaRivera | Desarrollador Full Stack">
+    <meta name="twitter:description" content="Aplicaciones web reales con frontend, backend, bases de datos y despliegue.">
     <meta name="twitter:image" content="https://portfolio-dev-index.vercel.app/og.png">
 
-    <!-- Favicon SVG inline -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text y='75' x='12' font-size='62' font-family='monospace' font-weight='bold' fill='%2338bdf8'>PR</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23101112'/><text y='72' x='12' font-size='58' font-family='monospace' font-weight='bold' fill='%232dd4bf'>PR</text></svg>">
 
-    <!-- Fuente Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
@@ -30,114 +27,227 @@
 
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #0ea5e9;
-            --app-bg: #1e3a8a;
-            --app-border: #60a5fa;
-            --repo-border: #334155;
-            --header-bg: radial-gradient(circle at top center, #1e293b 0%, #0f172a 100%);
-            --controls-bg: rgba(15, 23, 42, 0.88);
-            --status-active-color: #86efac;
-            --status-archived-color: #94a3b8;
-            --status-wip-color: #fcd34d;
-            --font-main: 'Outfit', sans-serif;
-            --container-width: 1200px;
+            --bg-color: #101112;
+            --surface: #17191d;
+            --surface-strong: #202328;
+            --surface-soft: #141619;
+            --text-main: #f7f7f5;
+            --text-secondary: #b7b5ae;
+            --text-muted: #85827a;
+            --accent: #2dd4bf;
+            --accent-hover: #5eead4;
+            --accent-contrast: #06231f;
+            --accent-warm: #f59e0b;
+            --border: #30343a;
+            --border-strong: #464b52;
+            --controls-bg: rgba(16, 17, 18, 0.94);
+            --success: #4ade80;
+            --warning: #fbbf24;
+            --archived: #a1a1aa;
+            --shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+            --font-main: 'Outfit', Arial, sans-serif;
+            --container-width: 1180px;
         }
 
         [data-theme="light"] {
-            --bg-color: #f1f5f9;
-            --card-bg: #ffffff;
-            --text-main: #0f172a;
-            --text-secondary: #64748b;
-            --repo-border: #cbd5e1;
-            --header-bg: radial-gradient(circle at top center, #dde4ed 0%, #f1f5f9 100%);
-            --controls-bg: rgba(241, 245, 249, 0.92);
-            --status-active-color: #15803d;
-            --status-archived-color: #475569;
-            --status-wip-color: #92400e;
+            --bg-color: #f7f8fa;
+            --surface: #ffffff;
+            --surface-strong: #eef1f4;
+            --surface-soft: #f2f4f7;
+            --text-main: #17191d;
+            --text-secondary: #4b5563;
+            --text-muted: #6b7280;
+            --accent: #0f766e;
+            --accent-hover: #115e59;
+            --accent-contrast: #ecfeff;
+            --accent-warm: #b45309;
+            --border: #d6dbe1;
+            --border-strong: #b8c0ca;
+            --controls-bg: rgba(247, 248, 250, 0.94);
+            --success: #15803d;
+            --warning: #92400e;
+            --archived: #52525b;
+            --shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: var(--font-main);
-            background-color: var(--bg-color);
+            background: var(--bg-color);
             color: var(--text-main);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             min-height: 100vh;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.25s, color 0.25s;
         }
 
-        /* --- HERO --- */
+        a {
+            color: inherit;
+        }
+
+        button,
+        input,
+        select {
+            font: inherit;
+        }
+
+        .page-shell {
+            width: 100%;
+        }
+
         header {
             width: 100%;
-            background: var(--header-bg);
-            padding: 6rem 1.5rem 4rem;
-            text-align: center;
-            border-bottom: 1px solid var(--repo-border);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            animation: fadeInDown 1s ease-out;
-            transition: background 0.3s, border-color 0.3s;
+            border-bottom: 1px solid var(--border);
+            background: var(--surface-soft);
         }
 
-        .profile-container { position: relative; margin-bottom: 1.5rem; }
+        .hero {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 4rem 1.5rem 2.25rem;
+        }
 
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #38bdf8, #818cf8);
-            display: flex;
+        .hero-topline {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            font-size: 3rem;
+            gap: 0.55rem;
+            color: var(--accent);
+            font-size: 0.9rem;
             font-weight: 700;
-            color: white;
-            border: 4px solid var(--bg-color);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
-            transition: border-color 0.3s;
+            margin-bottom: 1rem;
+        }
+
+        .hero-topline::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 5px rgba(45, 212, 191, 0.13);
         }
 
         h1 {
-            font-size: 3.5rem;
+            max-width: 900px;
+            font-size: clamp(2.45rem, 6vw, 4.7rem);
+            line-height: 0.98;
             font-weight: 800;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-        }
-
-        .role {
-            font-size: 1.25rem;
-            color: var(--accent);
-            font-weight: 600;
+            letter-spacing: 0;
             margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
-        p.bio {
+        .hero-lead {
+            max-width: 800px;
             color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 600px;
-            line-height: 1.6;
-            margin-bottom: 2rem;
+            font-size: 1.12rem;
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
         }
 
-        .social-links { display: flex; gap: 1.5rem; }
-        .social-link { color: var(--text-secondary); transition: color 0.2s; }
-        .social-link:hover { color: var(--accent); }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.85rem;
+        }
 
-        /* --- CONTROLS BAR --- */
+        .hero-proof {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.8rem;
+        }
+
+        .proof-item {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            background: var(--surface);
+        }
+
+        .proof-value {
+            display: block;
+            color: var(--accent);
+            font-size: 1.55rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .proof-label {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.45;
+        }
+
+        .section {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 2.35rem 1.5rem 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-kicker {
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            margin-bottom: 0.35rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            line-height: 1.2;
+            font-weight: 750;
+            letter-spacing: 0;
+        }
+
+        .section-note {
+            color: var(--text-secondary);
+            max-width: 520px;
+            line-height: 1.6;
+            font-size: 0.96rem;
+        }
+
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.8rem;
+        }
+
+        .capability {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            background: var(--surface);
+        }
+
+        .capability h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .capability p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
         .controls-bar {
             width: 100%;
             position: sticky;
@@ -146,8 +256,9 @@
             background: var(--controls-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--repo-border);
-            transition: background 0.3s, border-color 0.3s;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin-top: 2rem;
         }
 
         .controls {
@@ -157,514 +268,1095 @@
             padding: 0.85rem 1.5rem;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
             align-items: center;
-            gap: 1rem;
+            gap: 0.85rem;
         }
 
         .search-bar {
             position: relative;
-            flex-grow: 1;
-            max-width: 400px;
+            flex: 1 1 260px;
+            min-width: 220px;
+            max-width: 430px;
+            order: 1;
         }
 
         .search-input {
             width: 100%;
-            background-color: var(--card-bg);
-            border: 1px solid var(--repo-border);
-            padding: 0.65rem 1rem 0.65rem 2.5rem;
-            border-radius: 12px;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.65rem 1rem 0.65rem 2.45rem;
+            border-radius: 8px;
             color: var(--text-main);
-            font-family: var(--font-main);
-            font-size: 1rem;
-            transition: border-color 0.2s, background-color 0.3s, color 0.3s;
+            font-size: 0.95rem;
+            transition: border-color 0.2s, background-color 0.2s, color 0.2s;
         }
 
         .search-input:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.16);
         }
 
         .search-icon {
             position: absolute;
-            left: 12px;
+            left: 0.8rem;
             top: 50%;
             transform: translateY(-50%);
             width: 18px;
             height: 18px;
-            color: var(--text-secondary);
+            color: var(--text-muted);
         }
 
         .filters {
             display: flex;
+            flex: 1 0 100%;
+            flex-wrap: wrap;
             align-items: center;
-            gap: 0.75rem;
-            overflow-x: auto;
-            padding-bottom: 2px;
+            gap: 0.5rem;
+            order: 2;
+        }
+
+        .filter-btn,
+        .sort-select,
+        .theme-btn,
+        .btn {
+            min-height: 40px;
         }
 
         .filter-btn {
             background: transparent;
-            border: 1px solid var(--repo-border);
+            border: 1px solid var(--border);
             color: var(--text-secondary);
-            padding: 0.45rem 0.9rem;
-            border-radius: 999px;
+            padding: 0.48rem 0.78rem;
+            border-radius: 8px;
             cursor: pointer;
-            font-family: var(--font-main);
-            font-weight: 500;
-            transition: all 0.2s;
+            font-weight: 650;
+            transition: background-color 0.2s, border-color 0.2s, color 0.2s;
             white-space: nowrap;
         }
 
-        .filter-btn:hover { border-color: var(--text-secondary); color: var(--text-main); }
+        .filter-btn:hover {
+            border-color: var(--border-strong);
+            color: var(--text-main);
+        }
 
         .filter-btn.active {
             background-color: var(--accent);
             border-color: var(--accent);
-            color: #0f172a;
-            font-weight: 600;
+            color: var(--accent-contrast);
         }
 
         .sort-select {
-            background-color: var(--card-bg);
-            border: 1px solid var(--repo-border);
+            background-color: var(--surface);
+            border: 1px solid var(--border);
             color: var(--text-secondary);
-            padding: 0.45rem 1.75rem 0.45rem 0.75rem;
-            border-radius: 12px;
-            font-family: var(--font-main);
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: border-color 0.2s, background-color 0.3s, color 0.3s;
-            appearance: none;
-            -webkit-appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 0.5rem center;
-            background-size: 16px;
-        }
-
-        .sort-select:focus { outline: none; border-color: var(--accent); }
-
-        .controls-right { display: flex; gap: 0.5rem; align-items: center; }
-
-        .theme-btn {
-            background: transparent;
-            border: 1px solid var(--repo-border);
-            color: var(--text-secondary);
-            padding: 0.5rem;
+            padding: 0.48rem 1.8rem 0.48rem 0.75rem;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2385827a' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.55rem center;
+            background-size: 16px;
+            flex: 0 0 auto;
+            order: 1;
+        }
+
+        .sort-select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .theme-btn {
+            flex: 0 0 auto;
+            width: 40px;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            background: var(--surface);
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            order: 1;
+            transition: border-color 0.2s, color 0.2s, background-color 0.2s;
         }
 
         .theme-btn:hover {
-            background-color: var(--card-bg);
             color: var(--accent);
             border-color: var(--accent);
         }
 
-        /* --- PROJECT COUNTER --- */
         .project-counter {
             width: 100%;
             max-width: var(--container-width);
             padding: 1rem 1.5rem 0;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.92rem;
         }
 
-        .project-counter span { color: var(--accent); font-weight: 600; }
+        .project-counter span {
+            color: var(--accent);
+            font-weight: 800;
+        }
 
-        /* --- GRID --- */
         main {
             width: 100%;
             max-width: var(--container-width);
-            padding: 2rem 1.5rem 4rem;
+            margin: 0 auto;
+            padding: 1.1rem 1.5rem 4rem;
         }
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            gap: 1rem;
         }
 
-        /* --- CARD --- */
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--repo-border);
-            border-radius: 16px;
-            padding: 1.75rem;
+        .project-card {
+            grid-column: span 4;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: fadeInUp 0.6s ease-out backwards;
+            min-height: 100%;
+            overflow: hidden;
+            box-shadow: none;
+            animation: fadeInUp 0.45s ease-out backwards;
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-            border-color: #475569;
+        .project-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--border-strong);
+            box-shadow: var(--shadow);
         }
 
-        [data-theme="light"] .card:hover {
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
-            border-color: #94a3b8;
+        .project-card.featured {
+            grid-column: span 6;
+            background: linear-gradient(180deg, var(--surface), var(--surface-strong));
         }
 
-        .card-app {
-            background: linear-gradient(145deg, #1e3a8a, #172554);
-            border-color: var(--app-border);
-            box-shadow: 0 0 15px rgba(30, 58, 138, 0.2);
+        .project-visual {
+            height: 142px;
+            border-bottom: 1px solid var(--border);
+            background: var(--visual-bg, #12342f);
+            position: relative;
+            padding: 1rem;
+            display: flex;
+            align-items: stretch;
         }
 
-        .card-app:hover {
-            border-color: #93c5fd;
-            box-shadow: 0 10px 40px -10px rgba(96, 165, 250, 0.4);
+        .visual-shell {
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 8px;
+            background: rgba(16, 17, 18, 0.42);
+            overflow: hidden;
+            box-shadow: 0 18px 32px rgba(0, 0, 0, 0.22);
         }
 
-        .card h2 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 0.75rem;
+        .visual-top {
+            height: 22px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 0 8px;
         }
 
-        .card-app h2 { color: white; }
+        .visual-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.62);
+        }
 
-        .card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; }
-        .card-app p { color: #bfdbfe; }
+        .visual-body {
+            height: calc(100% - 22px);
+            display: grid;
+            grid-template-columns: 28% 1fr;
+        }
 
-        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .visual-sidebar {
+            border-right: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 10px 8px;
+        }
 
-        .tag {
-            font-size: 0.75rem;
-            padding: 0.35rem 0.75rem;
+        .visual-content {
+            padding: 10px;
+        }
+
+        .visual-line,
+        .visual-pill,
+        .visual-block,
+        .visual-chart,
+        .visual-list {
+            background: rgba(255, 255, 255, 0.68);
+        }
+
+        .visual-line {
+            height: 6px;
+            border-radius: 999px;
+            margin-bottom: 7px;
+            opacity: 0.75;
+        }
+
+        .visual-line.short {
+            width: 56%;
+        }
+
+        .visual-line.medium {
+            width: 76%;
+        }
+
+        .visual-pill {
+            width: 46px;
+            height: 16px;
+            border-radius: 999px;
+            margin-bottom: 8px;
+        }
+
+        .visual-blocks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .visual-block {
+            height: 34px;
             border-radius: 6px;
-            font-weight: 500;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--text-secondary);
+            opacity: 0.62;
         }
 
-        [data-theme="light"] .tag { background-color: rgba(0, 0, 0, 0.06); }
+        .visual-chart {
+            height: 42px;
+            border-radius: 6px;
+            margin-top: 8px;
+            clip-path: polygon(0 70%, 16% 55%, 34% 66%, 52% 31%, 68% 44%, 84% 18%, 100% 30%, 100% 100%, 0 100%);
+            opacity: 0.7;
+        }
 
-        .card-app .tag { background-color: rgba(255, 255, 255, 0.15); color: #dbeafe; }
+        .visual-music { --visual-bg: #0f3d32; }
+        .visual-ledger { --visual-bg: #3a2e12; }
+        .visual-salon { --visual-bg: #3c2436; }
+        .visual-poetry { --visual-bg: #253b30; }
+        .visual-finance { --visual-bg: #163447; }
+        .visual-portfolio { --visual-bg: #34363a; }
+        .visual-contentweb { --visual-bg: #453322; }
+        .visual-backend { --visual-bg: #1f2f45; }
+        .visual-auth { --visual-bg: #352a45; }
+        .visual-cognitive { --visual-bg: #244236; }
+        .visual-metrics { --visual-bg: #203746; }
 
-        /* --- STATUS BADGE --- */
+        .card-body {
+            padding: 1.15rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            flex: 1;
+        }
+
+        .card-head {
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .meta-row,
+        .badge-row,
+        .tags,
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .project-type,
         .status-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.3rem;
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 0.2rem 0.6rem;
+            gap: 0.35rem;
+            width: fit-content;
+            font-size: 0.75rem;
+            font-weight: 800;
             border-radius: 999px;
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            padding: 0.25rem 0.58rem;
+        }
+
+        .project-type {
+            color: var(--accent);
+            background: rgba(45, 212, 191, 0.12);
         }
 
         .status-badge::before {
             content: '';
-            width: 6px;
-            height: 6px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
-            display: inline-block;
+            background: currentColor;
         }
 
-        .status-activo { background: rgba(34, 197, 94, 0.15); color: var(--status-active-color); }
-        .status-activo::before { background: #22c55e; }
-        .status-archivado { background: rgba(148, 163, 184, 0.15); color: var(--status-archived-color); }
-        .status-archivado::before { background: #94a3b8; }
-        .status-wip { background: rgba(251, 191, 36, 0.15); color: var(--status-wip-color); }
-        .status-wip::before { background: #f59e0b; animation: pulse 1.5s infinite; }
-
-        .infra-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-            margin-bottom: 0.75rem;
+        .status-produccion {
+            color: var(--success);
+            background: rgba(74, 222, 128, 0.12);
         }
 
-        .infra-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.2rem;
-            font-size: 0.65rem;
-            font-weight: 600;
-            padding: 0.15rem 0.55rem;
-            border-radius: 999px;
-            letter-spacing: 0.3px;
+        .status-demo {
+            color: var(--warning);
+            background: rgba(251, 191, 36, 0.12);
         }
 
-        .infra-frontend {
-            background: rgba(56, 189, 248, 0.12);
-            color: #38bdf8;
-        }
-        [data-theme="light"] .infra-frontend {
-            background: rgba(2, 132, 199, 0.12);
-            color: #0284c7;
+        .status-archivado {
+            color: var(--archived);
+            background: rgba(161, 161, 170, 0.13);
         }
 
-        .infra-backend {
-            background: rgba(34, 197, 94, 0.12);
-            color: #4ade80;
-        }
-        [data-theme="light"] .infra-backend {
-            background: rgba(21, 128, 61, 0.12);
-            color: #15803d;
+        .project-card h2 {
+            font-size: 1.35rem;
+            line-height: 1.2;
+            letter-spacing: 0;
         }
 
-        .infra-db {
-            background: rgba(251, 146, 60, 0.12);
-            color: #fb923c;
-        }
-        [data-theme="light"] .infra-db {
-            background: rgba(194, 65, 12, 0.12);
-            color: #c2410c;
+        .tagline {
+            color: var(--accent-warm);
+            font-weight: 700;
+            line-height: 1.45;
         }
 
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .summary {
+            color: var(--text-secondary);
+            line-height: 1.62;
+            font-size: 0.96rem;
+        }
 
-        .links { display: flex; gap: 0.75rem; margin-top: auto; }
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.65rem;
+        }
+
+        .evidence-item {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.72rem;
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        [data-theme="light"] .evidence-item {
+            background: rgba(15, 23, 42, 0.025);
+        }
+
+        .evidence-label {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            margin-bottom: 0.25rem;
+        }
+
+        .evidence-value {
+            color: var(--text-main);
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+
+        .highlights {
+            list-style: none;
+            display: grid;
+            gap: 0.42rem;
+        }
+
+        .highlights li {
+            color: var(--text-secondary);
+            line-height: 1.45;
+            font-size: 0.91rem;
+            display: grid;
+            grid-template-columns: 14px 1fr;
+            gap: 0.4rem;
+        }
+
+        .highlights li::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+            margin-top: 0.47rem;
+        }
+
+        .stack-list {
+            display: grid;
+            gap: 0.42rem;
+        }
+
+        .stack-row {
+            display: grid;
+            grid-template-columns: 82px 1fr;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.35;
+        }
+
+        .stack-key {
+            color: var(--text-muted);
+            font-weight: 800;
+        }
+
+        .tag {
+            font-size: 0.78rem;
+            padding: 0.34rem 0.55rem;
+            border-radius: 6px;
+            font-weight: 700;
+            background-color: rgba(255, 255, 255, 0.06);
+            color: var(--text-secondary);
+            border: 1px solid transparent;
+        }
+
+        [data-theme="light"] .tag {
+            background-color: rgba(15, 23, 42, 0.05);
+        }
+
+        .links {
+            margin-top: auto;
+            padding-top: 0.2rem;
+        }
 
         .btn {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            padding: 0.7rem 1.2rem;
-            border-radius: 10px;
+            gap: 0.48rem;
+            padding: 0.62rem 0.78rem;
+            border-radius: 8px;
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            flex: 1;
+            font-weight: 800;
+            border: 1px solid var(--border);
+            transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
         }
 
-        .btn-repo {
-            background-color: rgba(255, 255, 255, 0.05);
+        .btn-primary {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: var(--accent-contrast);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: var(--surface);
             color: var(--text-main);
-            border: 1px solid var(--repo-border);
         }
 
-        [data-theme="light"] .btn-repo { background-color: rgba(0, 0, 0, 0.04); }
-        .btn-repo:hover { background-color: rgba(255, 255, 255, 0.1); border-color: var(--text-secondary); }
-        [data-theme="light"] .btn-repo:hover { background-color: rgba(0, 0, 0, 0.08); }
+        .btn-secondary:hover {
+            border-color: var(--border-strong);
+            background-color: var(--surface-strong);
+        }
 
-        .btn-live { background-color: var(--accent); color: #011827; }
-        .btn-live:hover { background-color: #7dd3fc; transform: scale(1.02); box-shadow: 0 0 15px rgba(56, 189, 248, 0.4); }
+        .btn-muted {
+            color: var(--text-muted);
+            background: transparent;
+            cursor: default;
+        }
 
-        .icon { width: 18px; height: 18px; }
+        .icon {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 auto;
+        }
 
-        /* --- ANIMATIONS --- */
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .empty-state {
+            grid-column: 1 / -1;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 3rem 1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            background: var(--surface);
+        }
 
-        .empty-state { grid-column: 1 / -1; text-align: center; padding: 4rem; color: var(--text-secondary); font-size: 1.2rem; }
+        footer {
+            width: 100%;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            background: var(--surface-soft);
+        }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .controls { flex-direction: column; align-items: stretch; }
-            .search-bar { max-width: 100%; }
-            .controls-right { justify-content: flex-end; }
+        .footer-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.92rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 980px) {
+            .hero-proof,
+            .capability-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .project-card,
+            .project-card.featured {
+                grid-column: span 6;
+            }
+
+            .controls {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                padding-top: 3rem;
+            }
+
+            h1 {
+                font-size: 2.45rem;
+                line-height: 1.05;
+            }
+
+            .hero-proof,
+            .capability-grid,
+            .evidence-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .controls {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .controls-bar {
+                position: static;
+            }
+
+            .search-bar {
+                width: 100%;
+                max-width: none;
+                flex: 0 0 auto;
+            }
+
+            .filters {
+                width: 100%;
+                flex: 0 0 auto;
+                order: 4;
+            }
+
+            .sort-select,
+            .theme-btn {
+                width: 100%;
+            }
+
+            .sort-select {
+                order: 2;
+            }
+
+            .theme-btn {
+                order: 3;
+            }
+
+            .project-card,
+            .project-card.featured {
+                grid-column: 1 / -1;
+            }
+
+            .project-visual {
+                height: 126px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="page-shell">
+        <header>
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-topline">Disponible para equipos que necesitan construir y mantener productos web</div>
+                <h1 id="hero-title">PoetaRivera, desarrollador Full Stack para aplicaciones web reales</h1>
+                <p class="hero-lead">
+                    Construyo interfaces, flujos de autenticación, paneles administrativos, APIs, bases de datos y despliegues. Este portfolio prioriza evidencia: qué problema resuelve cada proyecto, qué parte desarrollé y con qué stack fue llevado a producción.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#projects">
+                        <span>Ver proyectos destacados</span>
+                    </a>
+                    <a class="btn btn-secondary" href="https://github.com/PoetaRivera" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <div class="hero-proof" aria-label="Resumen profesional">
+                    <div class="proof-item">
+                        <span class="proof-value">14</span>
+                        <span class="proof-label">proyectos web entre productos, SaaS, herramientas y sitios en producción.</span>
+                    </div>
+                    <div class="proof-item">
+                        <span class="proof-value">Full Stack</span>
+                        <span class="proof-label">React, JavaScript, Node.js, Firebase, PostgreSQL, Firestore y SQLite.</span>
+                    </div>
+                    <div class="proof-item">
+                        <span class="proof-value">Deploy</span>
+                        <span class="proof-label">Experiencia publicando en Firebase, Vercel, Railway, Koyeb y GitHub Pages.</span>
+                    </div>
+                </div>
+            </section>
+        </header>
 
-    <header>
-        <div class="profile-container">
-            <div class="profile-img">PR</div>
-        </div>
-        <h1>PoetaRivera</h1>
-        <div class="role">Desarrollador</div>
-        <p class="bio">Desarrollador apasionado por crear aplicaciones web.</p>
-        <div class="social-links">
-            <a href="https://github.com/PoetaRivera" target="_blank" class="social-link" title="GitHub">
-                <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-            </a>
-        </div>
-    </header>
-
-    <div class="controls-bar">
-        <div class="controls">
-            <div class="search-bar">
-                <svg class="icon search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-                <input type="text" id="searchInput" class="search-input" placeholder="Buscar proyectos...">
+        <section class="section" aria-labelledby="skills-title">
+            <div class="section-header">
+                <div>
+                    <div class="section-kicker">Perfil técnico</div>
+                    <h2 class="section-title" id="skills-title">Qué puedo aportar a una empresa</h2>
+                </div>
+                <p class="section-note">El portfolio está organizado para mostrar capacidad de entrega: producto usable, criterio técnico, despliegue y mantenimiento.</p>
             </div>
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="app">Apps Desplegadas</button>
-                <button class="filter-btn" data-filter="frontend">Frontend</button>
-                <button class="filter-btn" data-filter="backend">Backend</button>
-                <select id="sortSelect" class="sort-select" title="Ordenar proyectos">
-                    <option value="default">Orden original</option>
-                    <option value="az">Nombre A–Z</option>
-                    <option value="status">Activos primero</option>
+            <div class="capability-grid">
+                <article class="capability">
+                    <h3>Frontend de producto</h3>
+                    <p>Interfaces con React, Vite, JavaScript, HTML y CSS orientadas a flujos reales, paneles y experiencias responsivas.</p>
+                </article>
+                <article class="capability">
+                    <h3>Backend y autenticación</h3>
+                    <p>APIs, autenticación con Firebase, lógica de negocio, integración con servicios y estructura modular para mantenimiento.</p>
+                </article>
+                <article class="capability">
+                    <h3>Datos y operación</h3>
+                    <p>Uso de Firestore, PostgreSQL y SQLite para productos que necesitan persistencia, reportes o administración.</p>
+                </article>
+                <article class="capability">
+                    <h3>Publicación y mejora</h3>
+                    <p>Deploy en plataformas modernas, revisión de estado de proyectos y priorización de mejoras visibles para usuarios.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="projects" aria-labelledby="projects-title">
+            <div class="section-header">
+                <div>
+                    <div class="section-kicker">Casos de proyecto</div>
+                    <h2 class="section-title" id="projects-title">Proyectos presentados como evidencia técnica</h2>
+                </div>
+                <p class="section-note">Cada tarjeta resume problema, rol, alcance, stack y enlaces para que una empresa pueda evaluar rápido el tipo de trabajo realizado.</p>
+            </div>
+        </section>
+
+        <div class="controls-bar">
+            <div class="controls">
+                <div class="search-bar">
+                    <svg class="icon search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar por proyecto, stack o rol...">
+                </div>
+                <div class="filters" aria-label="Filtros de proyectos">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="featured">Destacados</button>
+                    <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                    <button class="filter-btn" data-filter="frontend">Frontend</button>
+                    <button class="filter-btn" data-filter="backend">Backend</button>
+                    <button class="filter-btn" data-filter="production">Producción</button>
+                </div>
+                <select id="sortSelect" class="sort-select" title="Ordenar proyectos" aria-label="Ordenar proyectos">
+                    <option value="featured">Destacados primero</option>
+                    <option value="az">Nombre A-Z</option>
+                    <option value="status">Producción primero</option>
                 </select>
-            </div>
-            <div class="controls-right">
-                <button id="themeBtn" class="theme-btn" title="Modo claro">
-                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <button id="themeBtn" class="theme-btn" title="Modo claro" aria-label="Cambiar tema">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                 </button>
             </div>
         </div>
+
+        <div class="project-counter" id="projectCounter"></div>
+
+        <main>
+            <div id="grid" class="grid-container"></div>
+        </main>
+
+        <footer>
+            <div class="footer-inner">
+                <span>PoetaRivera | Desarrollador Full Stack</span>
+                <span>Portfolio enfocado en evidencia de proyectos, stack y despliegue.</span>
+            </div>
+        </footer>
     </div>
 
-    <div class="project-counter" id="projectCounter"></div>
-
-    <main>
-        <div id="grid" class="grid-container"></div>
-    </main>
-
     <script>
-        // --- DATA ---
         const proyectos = [
             {
+                nombre: "EvaluMind",
+                tipo: "Aplicación educativa",
+                tagline: "Autoobservación cognitiva con cuestionarios, tareas interactivas e historial local.",
+                resumen: "Aplicación React/Vite para observar atención, impulsividad, memoria de trabajo, sensibilidad y funciones ejecutivas. Prioriza privacidad, resultados locales, exportación PDF y uso educativo sin diagnóstico.",
+                rol: "Full Stack / Frontend",
+                alcance: "React, rutas, tests, Firebase Hosting, Firestore opcional y PDF",
+                impacto: "Producto en producción para autoobservación educativa",
+                tecnologias: ["React", "Vite", "Firebase", "Firestore", "jsPDF", "Vitest", "Playwright"],
+                categorias: ["fullstack", "frontend", "production"],
+                estado: "produccion",
+                destacado: true,
+                visual: "cognitive",
+                features: [
+                    "Cuestionarios y tareas interactivas para observar perfiles cognitivos.",
+                    "Historial local, tendencias personales, notas de contexto y exportación a PDF.",
+                    "Firestore opcional con reglas restrictivas y cobertura con Vitest/Playwright."
+                ],
+                stack: { Frontend: "React 19 + Vite", Backend: "Firebase / Firestore opcional", Datos: "localStorage + Firestore agregado", Deploy: "Firebase Hosting" },
+                repo: "https://github.com/PoetaRivera/evalumind",
+                demo: "https://evalumind-app.web.app"
+            },
+            {
+                nombre: "MindMetrics",
+                tipo: "PWA educativa",
+                tagline: "Ocho ejercicios cognitivos gratuitos, anónimos y con comparación educativa.",
+                resumen: "Aplicación estática modular con tests de memoria, atención, razonamiento, velocidad, flexibilidad y lenguaje. Incluye service worker, temas accesibles, almacenamiento local, Firestore para estadísticas agregadas y pruebas E2E.",
+                rol: "Frontend Developer",
+                alcance: "Arquitectura modular, PWA, tests cognitivos, Firestore y Firebase Hosting",
+                impacto: "Herramienta educativa anónima para práctica y seguimiento cognitivo",
+                tecnologias: ["JavaScript", "ES Modules", "Firebase", "Firestore", "PWA", "Playwright"],
+                categorias: ["frontend", "production"],
+                estado: "produccion",
+                destacado: true,
+                visual: "metrics",
+                features: [
+                    "8 ejercicios: dígitos, Corsi, palabras, matrices, Stroop, símbolos, Trail Making y fluencia.",
+                    "Service Worker, hash routing y temas claro, oscuro y alto contraste.",
+                    "Comparaciones anónimas agregadas con reglas Firestore y pruebas E2E."
+                ],
+                stack: { Frontend: "HTML + CSS + JavaScript ES Modules", Backend: "Firestore", Datos: "IndexedDB/localStorage + Firestore agregado", Deploy: "Firebase Hosting" },
+                repo: null,
+                demo: "https://mindmetrics-app.web.app",
+                repoNota: "Repositorio local sin remoto público"
+            },
+            {
+                nombre: "Sistema Contable SV",
+                tipo: "Producto comercial",
+                tagline: "Sistema contable para reportes y operación fiscal en El Salvador.",
+                resumen: "Aplicación web orientada a procesos contables, módulos fiscales y reportes para uso real. Es una pieza fuerte para mostrar criterio de producto, datos y despliegue.",
+                rol: "Full Stack Developer",
+                alcance: "Frontend, backend, base de datos y despliegue",
+                impacto: "Producto en producción para gestión contable",
+                tecnologias: ["React", "PostgreSQL", "Railway", "Reportes"],
+                categorias: ["fullstack", "frontend", "backend", "production"],
+                estado: "produccion",
+                destacado: true,
+                visual: "ledger",
+                features: [
+                    "Módulos para organizar información fiscal y contable.",
+                    "Reportes y estructura de datos pensada para operación diaria.",
+                    "Despliegue comercial con servicios frontend, backend y base de datos."
+                ],
+                stack: { Frontend: "React", Backend: "Railway", Datos: "PostgreSQL", Deploy: "Railway" },
+                repo: null,
+                demo: "https://sistemacontablesv.com",
+                repoNota: "Código privado por proyecto comercial"
+            },
+            {
+                nombre: "Multisalon",
+                tipo: "SaaS",
+                tagline: "Gestión integral para salones de belleza.",
+                resumen: "Plataforma SaaS para administrar operaciones de salones, con arquitectura distribuida entre frontend, backend y datos en la nube.",
+                rol: "Full Stack Developer",
+                alcance: "Producto SaaS, frontend, backend y datos",
+                impacto: "Aplicación activa para negocio real",
+                tecnologias: ["JavaScript", "Firebase", "Koyeb", "Firestore", "SaaS"],
+                categorias: ["fullstack", "frontend", "backend", "production"],
+                estado: "produccion",
+                destacado: true,
+                visual: "salon",
+                features: [
+                    "Flujos orientados a administración de servicios y operación.",
+                    "Separación entre frontend, backend y base de datos.",
+                    "Infraestructura con Firebase, Koyeb y Firestore."
+                ],
+                stack: { Frontend: "Firebase", Backend: "Koyeb", Datos: "Firestore", Deploy: "Firebase + Koyeb" },
+                repo: null,
+                demo: "https://misalon.misalons.com",
+                repoNota: "Código privado por proyecto comercial"
+            },
+            {
                 nombre: "PageMusic",
-                desc: "Plataforma de streaming musical con player global, colas, shuffle y géneros.",
-                tecnologias: ["React", "Vite", "Tailwind", "Node.js"],
-                categorias: ["app", "frontend"],
-                estado: "activo",
-                infraestructura: { frontend: "Railway", backend: "Railway", baseDeDatos: "SQLite" },
+                tipo: "Aplicación web",
+                tagline: "Streaming musical con reproductor global y experiencia interactiva.",
+                resumen: "Aplicación tipo producto con player global, colas, shuffle, géneros y navegación musical. Muestra habilidad para construir interfaces con estado compartido y experiencia de usuario continua.",
+                rol: "Full Stack / Frontend",
+                alcance: "Interfaz, lógica de reproducción, datos y despliegue",
+                impacto: "Demo funcional desplegada",
+                tecnologias: ["React", "Vite", "Tailwind", "Node.js", "SQLite"],
+                categorias: ["fullstack", "frontend", "backend", "production"],
+                estado: "produccion",
+                destacado: true,
+                visual: "music",
+                features: [
+                    "Reproductor global con cola, shuffle y navegación por géneros.",
+                    "Estado de reproducción persistente durante la navegación.",
+                    "Deploy completo de frontend y backend en Railway."
+                ],
+                stack: { Frontend: "React + Vite + Tailwind", Backend: "Node.js en Railway", Datos: "SQLite", Deploy: "Railway" },
                 repo: "https://github.com/PoetaRivera/pagemusic",
                 demo: "https://pagemusic-production.up.railway.app/"
             },
             {
-                nombre: "Sistema Contable SV",
-                desc: "Sistema contable para El Salvador con módulos fiscales y reportes.",
-                tecnologias: ["React", "Frontend"],
-                categorias: ["app", "frontend"],
-                estado: "activo",
-                infraestructura: { frontend: "Railway", backend: "Railway", baseDeDatos: "PostgreSQL" },
-                repo: null,
-                demo: "https://sistemacontablesv.com"
-            },
-            {
-                nombre: "Multisalon",
-                desc: "Plataforma integral SaaS para gestión de salones de belleza.",
-                tecnologias: ["JavaScript", "SaaS", "Frontend"],
-                categorias: ["app", "frontend"],
-                estado: "activo",
-                infraestructura: { frontend: "Firebase", backend: "Koyeb", baseDeDatos: "Firestore" },
-                repo: null,
-                demo: "https://misalon.misalons.com"
-            },
-            {
-                nombre: "Login Firebase (pedido-login)",
-                desc: "Sistema autenticación robusto con Firebase Auth y React.",
-                tecnologias: ["Firebase", "React", "Auth"],
-                categorias: ["app", "frontend"],
-                estado: "archivado",
-                infraestructura: { frontend: null, backend: null, baseDeDatos: null },
-                repo: "https://github.com/PoetaRivera/pedido-login",
-                demo: null
-            },
-            {
                 nombre: "Asistente Poético",
-                desc: "Herramienta que analiza métrica y conteo silábico de poemas.",
-                tecnologias: ["JavaScript", "Algoritmos", "Literatura"],
-                categorias: ["app", "frontend"],
-                estado: "activo",
-                infraestructura: { frontend: "Firebase", backend: null, baseDeDatos: null },
+                tipo: "Herramienta especializada",
+                tagline: "Análisis de métrica y conteo silábico para poemas.",
+                resumen: "Proyecto técnico-cultural que resuelve un problema poco común: apoyar análisis poético mediante algoritmos propios de conteo y métrica.",
+                rol: "Frontend + lógica algorítmica",
+                alcance: "Algoritmo, interfaz y despliegue",
+                impacto: "Herramienta pública activa",
+                tecnologias: ["JavaScript", "Algoritmos", "Firebase", "Literatura"],
+                categorias: ["frontend", "production"],
+                estado: "produccion",
+                destacado: true,
+                visual: "poetry",
+                features: [
+                    "Conteo silábico y apoyo al análisis de métrica.",
+                    "Interfaz enfocada en uso directo por escritores o lectores.",
+                    "Publicación en Firebase Hosting."
+                ],
+                stack: { Frontend: "JavaScript", Backend: "No requiere", Datos: "Local", Deploy: "Firebase" },
                 repo: "https://github.com/PoetaRivera/Asistente-Poetico",
                 demo: "https://asistentepoetico.web.app"
             },
             {
-                nombre: "Financiera App",
-                desc: "Web para control de finanzas personales y gastos.",
-                tecnologias: ["JavaScript", "Finance"],
-                categorias: ["app", "frontend"],
-                estado: "activo",
-                infraestructura: { frontend: "Vercel", backend: null, baseDeDatos: null },
-                repo: "https://github.com/PoetaRivera/financiera",
-                demo: "https://financiera-ten.vercel.app"
-            },
-            {
-                nombre: "Poesía Isela Escárcega",
-                desc: "Portfolio digital de la poeta Isela Escárcega.",
-                tecnologias: ["Web", "Portfolio"],
-                categorias: ["app", "frontend"],
-                estado: "activo",
-                infraestructura: { frontend: "Firebase", backend: null, baseDeDatos: null },
-                repo: null,
-                demo: "https://poesiaiselaescarcega.web.app"
-            },
-            {
-                nombre: "Poesía Nelson Rivera",
-                desc: "Web de difusión de la obra de Nelson Rivera.",
-                tecnologias: ["Web", "Cultura"],
-                categorias: ["app", "frontend"],
-                estado: "activo",
-                infraestructura: { frontend: "GitHub Pages", backend: null, baseDeDatos: null },
-                repo: null,
-                demo: "https://poetarivera.github.io"
-            },
-            {
-                nombre: "Portfolio Dev (Este sitio)",
-                desc: "Directorio de proyectos personal.",
-                tecnologias: ["HTML", "CSS", "Portfolio"],
-                categorias: ["app", "frontend"],
-                estado: "activo",
-                infraestructura: { frontend: "Vercel", backend: null, baseDeDatos: null },
-                repo: "https://github.com/PoetaRivera/portfolio-dev-index",
-                demo: "https://portfolio-dev-index.vercel.app/"
-            },
-            {
-                nombre: "Landing Page Misalons",
-                desc: "Landing page optimizada para adminMisalons.",
-                tecnologias: ["Landing", "Marketing"],
-                categorias: ["app", "frontend"],
-                estado: "activo",
-                infraestructura: { frontend: "Firebase", backend: "Koyeb", baseDeDatos: "Firestore" },
-                repo: "https://github.com/PoetaRivera/landing-frontend",
-                demo: "https://adminmisalons.web.app/"
-            },
-            {
                 nombre: "Gestor de Comentarios",
-                desc: "Sistema modular para gestión de comentarios en blogs.",
-                tecnologias: ["JavaScript", "Node.js", "Backend"],
-                categorias: ["backend"],
-                estado: "activo",
-                infraestructura: { frontend: null, backend: "Vercel", baseDeDatos: "Firestore" },
+                tipo: "Backend modular",
+                tagline: "Sistema para administrar comentarios en blogs.",
+                resumen: "Proyecto centrado en backend y estructura modular. Es útil para demostrar organización de lógica, persistencia y servicios reutilizables.",
+                rol: "Backend Developer",
+                alcance: "API, módulos y base de datos",
+                impacto: "Base técnica reutilizable para blogs",
+                tecnologias: ["JavaScript", "Node.js", "Firestore", "Vercel"],
+                categorias: ["backend", "production"],
+                estado: "produccion",
+                destacado: false,
+                visual: "backend",
+                features: [
+                    "Gestión modular de comentarios.",
+                    "Persistencia con Firestore.",
+                    "Preparado para integrarse con sitios de contenido."
+                ],
+                stack: { Frontend: "Integrable", Backend: "Node.js", Datos: "Firestore", Deploy: "Vercel" },
                 repo: "https://github.com/PoetaRivera/gestordecomentarios",
                 demo: null
             },
             {
-                nombre: "Asistente Poético (Legacy)",
-                desc: "Versión anterior del algoritmo (Deprecado).",
-                tecnologias: ["Legacy"],
-                categorias: [],
+                nombre: "Financiera App",
+                tipo: "Aplicación de productividad",
+                tagline: "Control de finanzas personales y seguimiento de gastos.",
+                resumen: "Web enfocada en organización financiera personal. Presenta capacidad para convertir necesidades cotidianas en una herramienta clara y desplegada.",
+                rol: "Frontend Developer",
+                alcance: "Interfaz, flujo de datos y publicación",
+                impacto: "Demo pública funcional",
+                tecnologias: ["JavaScript", "Vercel", "Finanzas"],
+                categorias: ["frontend", "production"],
+                estado: "produccion",
+                destacado: false,
+                visual: "finance",
+                features: [
+                    "Registro y visualización de movimientos financieros.",
+                    "Interfaz orientada a claridad y uso frecuente.",
+                    "Deploy público en Vercel."
+                ],
+                stack: { Frontend: "JavaScript", Backend: "No requiere", Datos: "Local", Deploy: "Vercel" },
+                repo: "https://github.com/PoetaRivera/financiera",
+                demo: "https://financiera-ten.vercel.app"
+            },
+            {
+                nombre: "Landing Page Misalons",
+                tipo: "Landing de producto",
+                tagline: "Página pública para presentar adminMisalons.",
+                resumen: "Landing enfocada en explicar un producto y conducir al usuario hacia la acción. Complementa el ecosistema de Multisalon.",
+                rol: "Frontend Developer",
+                alcance: "Diseño web, contenido y despliegue",
+                impacto: "Sitio activo para producto comercial",
+                tecnologias: ["Landing", "Firebase", "Marketing", "Koyeb", "Firestore"],
+                categorias: ["frontend", "production"],
+                estado: "produccion",
+                destacado: false,
+                visual: "salon",
+                features: [
+                    "Presentación comercial del producto.",
+                    "Conexión con infraestructura del ecosistema Misalons.",
+                    "Publicación en Firebase Hosting."
+                ],
+                stack: { Frontend: "Firebase Hosting", Backend: "Koyeb", Datos: "Firestore", Deploy: "Firebase" },
+                repo: "https://github.com/PoetaRivera/landing-frontend",
+                demo: "https://adminmisalons.web.app/"
+            },
+            {
+                nombre: "Portfolio Dev",
+                tipo: "Portfolio profesional",
+                tagline: "Directorio curado de proyectos para evaluación técnica.",
+                resumen: "Este sitio organiza aplicaciones desplegadas, repositorios, estado, stack y alcance para facilitar la lectura por empresas.",
+                rol: "Frontend Developer",
+                alcance: "Arquitectura estática, contenido y experiencia",
+                impacto: "Portfolio público actualizado",
+                tecnologias: ["HTML", "CSS", "JavaScript", "Vercel"],
+                categorias: ["frontend", "production"],
+                estado: "produccion",
+                destacado: false,
+                visual: "portfolio",
+                features: [
+                    "Búsqueda, filtros y ordenamiento de proyectos.",
+                    "Presentación de stack, rol y evidencia de trabajo.",
+                    "Despliegue público en Vercel."
+                ],
+                stack: { Frontend: "HTML + CSS + JavaScript", Backend: "No requiere", Datos: "JavaScript local", Deploy: "Vercel" },
+                repo: "https://github.com/PoetaRivera/portfolio-dev-index",
+                demo: "https://portfolio-dev-index.vercel.app/"
+            },
+            {
+                nombre: "Poesía Isela Escárcega",
+                tipo: "Sitio cultural",
+                tagline: "Portfolio digital para obra poética.",
+                resumen: "Sitio web de difusión cultural, útil para mostrar capacidad de crear experiencias editoriales y publicar contenido de forma clara.",
+                rol: "Frontend Developer",
+                alcance: "Sitio web, estructura de contenido y despliegue",
+                impacto: "Sitio público activo",
+                tecnologias: ["Web", "Portfolio", "Firebase"],
+                categorias: ["frontend", "production"],
+                estado: "produccion",
+                destacado: false,
+                visual: "contentweb",
+                features: [
+                    "Presentación ordenada de obra y autora.",
+                    "Experiencia responsiva para lectura.",
+                    "Deploy en Firebase Hosting."
+                ],
+                stack: { Frontend: "Web estática", Backend: "No requiere", Datos: "Contenido editorial", Deploy: "Firebase" },
+                repo: null,
+                demo: "https://poesiaiselaescarcega.web.app",
+                repoNota: "Código privado"
+            },
+            {
+                nombre: "Poesía Nelson Rivera",
+                tipo: "Sitio cultural",
+                tagline: "Difusión web de obra poética.",
+                resumen: "Proyecto de presencia digital enfocado en contenido literario y acceso público mediante GitHub Pages.",
+                rol: "Frontend Developer",
+                alcance: "Sitio web y publicación",
+                impacto: "Sitio público activo",
+                tecnologias: ["Web", "Cultura", "GitHub Pages"],
+                categorias: ["frontend", "production"],
+                estado: "produccion",
+                destacado: false,
+                visual: "contentweb",
+                features: [
+                    "Organización de contenido literario.",
+                    "Sitio liviano y accesible desde GitHub Pages.",
+                    "Publicación directa sin backend."
+                ],
+                stack: { Frontend: "Web estática", Backend: "No requiere", Datos: "Contenido editorial", Deploy: "GitHub Pages" },
+                repo: null,
+                demo: "https://poetarivera.github.io",
+                repoNota: "Código privado"
+            },
+            {
+                nombre: "Login Firebase",
+                tipo: "Autenticación",
+                tagline: "Sistema de login con Firebase Auth y React.",
+                resumen: "Proyecto enfocado en autenticación, protección de acceso y flujo de usuario. Aunque está archivado, evidencia una base importante para productos privados.",
+                rol: "Frontend + Auth",
+                alcance: "Login, sesión y conexión con Firebase",
+                impacto: "Base reutilizable de autenticación",
+                tecnologias: ["Firebase", "React", "Auth"],
+                categorias: ["frontend"],
                 estado: "archivado",
-                infraestructura: { frontend: null, backend: null, baseDeDatos: null },
+                destacado: false,
+                visual: "auth",
+                features: [
+                    "Flujo de autenticación con Firebase Auth.",
+                    "Interfaz en React.",
+                    "Proyecto base para sistemas que requieren acceso seguro."
+                ],
+                stack: { Frontend: "React", Backend: "Firebase Auth", Datos: "Firebase", Deploy: "Archivado" },
+                repo: "https://github.com/PoetaRivera/pedido-login",
+                demo: null
+            },
+            {
+                nombre: "Asistente Poético Legacy",
+                tipo: "Proyecto archivado",
+                tagline: "Versión anterior del algoritmo de análisis poético.",
+                resumen: "Versión histórica conservada como referencia de evolución técnica del Asistente Poético actual.",
+                rol: "Frontend + algoritmo",
+                alcance: "Prototipo y aprendizaje",
+                impacto: "Base previa reemplazada por versión actual",
+                tecnologias: ["Legacy", "JavaScript"],
+                categorias: ["frontend"],
+                estado: "archivado",
+                destacado: false,
+                visual: "poetry",
+                features: [
+                    "Prototipo inicial del algoritmo.",
+                    "Referencia de aprendizaje y evolución.",
+                    "Sustituido por una versión activa."
+                ],
+                stack: { Frontend: "JavaScript", Backend: "No requiere", Datos: "Local", Deploy: "Archivado" },
                 repo: "https://github.com/PoetaRivera/asistente-poetico-ultima",
                 demo: null
             }
         ];
 
-        // --- ICONS ---
         const icons = {
-            github: `<svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>`,
-            link: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>`
+            github: `<svg class="icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>`,
+            external: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7m0-7L10 14"/><path stroke-linecap="round" stroke-linejoin="round" d="M5 7v12h12v-5"/></svg>`,
+            lock: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 11V7a4 4 0 118 0v4"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 11h12v10H6z"/></svg>`
         };
 
-        const STATUS_LABELS = { activo: "Activo", archivado: "Archivado", wip: "En progreso" };
-        const STATUS_ORDER = { activo: 0, wip: 1, archivado: 2 };
+        const STATUS_LABELS = {
+            produccion: "En producción",
+            demo: "Demo",
+            archivado: "Archivado"
+        };
 
-        // --- DOM ---
+        const STATUS_ORDER = {
+            produccion: 0,
+            demo: 1,
+            archivado: 2
+        };
+
         const grid = document.getElementById('grid');
         const searchInput = document.getElementById('searchInput');
         const filterBtns = document.querySelectorAll('.filter-btn');
@@ -675,9 +1367,8 @@
 
         let currentFilter = 'all';
         let currentSearch = '';
-        let currentSort = 'default';
+        let currentSort = 'featured';
 
-        // --- THEME ---
         const savedTheme = localStorage.getItem('theme') || 'dark';
         htmlEl.setAttribute('data-theme', savedTheme);
         syncThemeIcon();
@@ -700,102 +1391,186 @@
             }
         }
 
-        // --- RENDER ---
+        function escapeHtml(value) {
+            return String(value)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function projectMatchesFilter(project) {
+            if (currentFilter === 'all') return true;
+            if (currentFilter === 'featured') return project.destacado;
+            if (currentFilter === 'production') return project.estado === 'produccion';
+            return project.categorias.includes(currentFilter);
+        }
+
+        function searchableText(project) {
+            return [
+                project.nombre,
+                project.tipo,
+                project.tagline,
+                project.resumen,
+                project.rol,
+                project.alcance,
+                project.impacto,
+                project.tecnologias.join(' '),
+                project.features.join(' '),
+                Object.values(project.stack).join(' ')
+            ].join(' ').toLowerCase();
+        }
+
+        function sortProjects(projects) {
+            if (currentSort === 'az') {
+                return [...projects].sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+            }
+            if (currentSort === 'status') {
+                return [...projects].sort((a, b) =>
+                    (STATUS_ORDER[a.estado] ?? 9) - (STATUS_ORDER[b.estado] ?? 9) ||
+                    Number(b.destacado) - Number(a.destacado)
+                );
+            }
+            return [...projects].sort((a, b) =>
+                Number(b.destacado) - Number(a.destacado) ||
+                (STATUS_ORDER[a.estado] ?? 9) - (STATUS_ORDER[b.estado] ?? 9)
+            );
+        }
+
+        function renderVisual(visual) {
+            return `
+                <div class="project-visual visual-${escapeHtml(visual)}" aria-hidden="true">
+                    <div class="visual-shell">
+                        <div class="visual-top">
+                            <span class="visual-dot"></span>
+                            <span class="visual-dot"></span>
+                            <span class="visual-dot"></span>
+                        </div>
+                        <div class="visual-body">
+                            <div class="visual-sidebar">
+                                <div class="visual-line medium"></div>
+                                <div class="visual-line"></div>
+                                <div class="visual-line short"></div>
+                            </div>
+                            <div class="visual-content">
+                                <div class="visual-pill"></div>
+                                <div class="visual-line medium"></div>
+                                <div class="visual-line short"></div>
+                                <div class="visual-blocks">
+                                    <div class="visual-block"></div>
+                                    <div class="visual-block"></div>
+                                </div>
+                                <div class="visual-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderStack(stack) {
+            return Object.entries(stack)
+                .filter(([, value]) => Boolean(value))
+                .map(([key, value]) => `
+                    <div class="stack-row">
+                        <span class="stack-key">${escapeHtml(key)}</span>
+                        <span>${escapeHtml(value)}</span>
+                    </div>
+                `).join('');
+        }
+
+        function renderProject(project, index) {
+            const card = document.createElement('article');
+            card.className = `project-card${project.destacado ? ' featured' : ''}`;
+            card.style.animationDelay = `${index * 0.04}s`;
+
+            const tagsHtml = project.tecnologias.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('');
+            const featuresHtml = project.features.map(feature => `<li>${escapeHtml(feature)}</li>`).join('');
+            const demoButton = project.demo
+                ? `<a href="${escapeHtml(project.demo)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">${icons.external}<span>Ver app</span></a>`
+                : '';
+            const repoButton = project.repo
+                ? `<a href="${escapeHtml(project.repo)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">${icons.github}<span>Ver código</span></a>`
+                : `<span class="btn btn-muted" title="${escapeHtml(project.repoNota || 'Código privado')}">${icons.lock}<span>Código privado</span></span>`;
+
+            card.innerHTML = `
+                ${renderVisual(project.visual)}
+                <div class="card-body">
+                    <div class="card-head">
+                        <div class="badge-row">
+                            <span class="project-type">${escapeHtml(project.tipo)}</span>
+                            <span class="status-badge status-${escapeHtml(project.estado)}">${escapeHtml(STATUS_LABELS[project.estado] || project.estado)}</span>
+                        </div>
+                        <div>
+                            <h2>${escapeHtml(project.nombre)}</h2>
+                            <p class="tagline">${escapeHtml(project.tagline)}</p>
+                        </div>
+                    </div>
+                    <p class="summary">${escapeHtml(project.resumen)}</p>
+                    <div class="evidence-grid">
+                        <div class="evidence-item">
+                            <span class="evidence-label">Rol</span>
+                            <span class="evidence-value">${escapeHtml(project.rol)}</span>
+                        </div>
+                        <div class="evidence-item">
+                            <span class="evidence-label">Alcance</span>
+                            <span class="evidence-value">${escapeHtml(project.alcance)}</span>
+                        </div>
+                        <div class="evidence-item">
+                            <span class="evidence-label">Valor</span>
+                            <span class="evidence-value">${escapeHtml(project.impacto)}</span>
+                        </div>
+                        <div class="evidence-item">
+                            <span class="evidence-label">Estado</span>
+                            <span class="evidence-value">${escapeHtml(STATUS_LABELS[project.estado] || project.estado)}</span>
+                        </div>
+                    </div>
+                    <ul class="highlights">${featuresHtml}</ul>
+                    <div class="stack-list">${renderStack(project.stack)}</div>
+                    <div class="tags">${tagsHtml}</div>
+                    <div class="links">${demoButton}${repoButton}</div>
+                </div>
+            `;
+            return card;
+        }
+
         function renderProjects() {
             grid.innerHTML = '';
 
-            let filtered = proyectos.filter(p => {
-                const matchesSearch = p.nombre.toLowerCase().includes(currentSearch) ||
-                    p.desc.toLowerCase().includes(currentSearch) ||
-                    (p.tecnologias && p.tecnologias.some(t => t.toLowerCase().includes(currentSearch)));
-
-                let matchesFilter = true;
-                if (currentFilter === 'app') matchesFilter = p.demo !== null;
-                if (currentFilter === 'frontend') matchesFilter = p.categorias.includes('frontend');
-                if (currentFilter === 'backend') matchesFilter = p.categorias.includes('backend');
-
-                return matchesSearch && matchesFilter;
-            });
-
-            if (currentSort === 'az') {
-                filtered = [...filtered].sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
-            } else if (currentSort === 'status') {
-                filtered = [...filtered].sort((a, b) =>
-                    (STATUS_ORDER[a.estado] ?? 9) - (STATUS_ORDER[b.estado] ?? 9)
-                );
-            }
+            const filtered = sortProjects(proyectos.filter(project => {
+                const matchesSearch = currentSearch === '' || searchableText(project).includes(currentSearch);
+                return matchesSearch && projectMatchesFilter(project);
+            }));
 
             projectCounter.innerHTML = `Mostrando <span>${filtered.length}</span> de <span>${proyectos.length}</span> proyectos`;
 
             if (filtered.length === 0) {
-                grid.innerHTML = `<div class="empty-state">No se encontraron proyectos...</div>`;
+                grid.innerHTML = `<div class="empty-state">No se encontraron proyectos con esos filtros.</div>`;
                 return;
             }
 
-            filtered.forEach((p, index) => {
-                const card = document.createElement('div');
-                card.className = p.demo ? 'card card-app' : 'card';
-                card.style.animationDelay = `${index * 0.05}s`;
-
-                const btnRepo = p.repo
-                    ? `<a href="${p.repo}" target="_blank" class="btn btn-repo">${icons.github} Code</a>`
-                    : `<span class="btn btn-repo" style="opacity:0.5; cursor:not-allowed;">${icons.github} Privado</span>`;
-
-                const btnLive = p.demo
-                    ? `<a href="${p.demo}" target="_blank" class="btn btn-live">${icons.link} Ver Demo</a>`
-                    : '';
-
-                const tagsHtml = p.tecnologias && p.tecnologias.length > 0
-                    ? p.tecnologias.map(t => `<span class="tag">${t}</span>`).join('')
-                    : '';
-
-                const statusBadge = p.estado
-                    ? `<div class="status-badge status-${p.estado}">${STATUS_LABELS[p.estado] || p.estado}</div>`
-                    : '';
-
-                const infra = p.infraestructura;
-                let infraBadgesHtml = '';
-                if (infra) {
-                    if (infra.frontend) infraBadgesHtml += `<span class="infra-badge infra-frontend">▲ ${infra.frontend}</span>`;
-                    if (infra.backend) infraBadgesHtml += `<span class="infra-badge infra-backend">◆ ${infra.backend}</span>`;
-                    if (infra.baseDeDatos) infraBadgesHtml += `<span class="infra-badge infra-db">■ ${infra.baseDeDatos}</span>`;
-                }
-                infraBadgesHtml = infraBadgesHtml ? `<div class="infra-badges">${infraBadgesHtml}</div>` : '';
-
-                card.innerHTML = `
-                    <div>
-                        <h2>${p.nombre}</h2>
-                        ${statusBadge}
-                        ${infraBadgesHtml}
-                        <div class="tags">${tagsHtml}</div>
-                        <p>${p.desc}</p>
-                    </div>
-                    <div class="links">
-                        ${btnLive}
-                        ${p.repo ? btnRepo : ''}
-                    </div>
-                `;
-                grid.appendChild(card);
+            filtered.forEach((project, index) => {
+                grid.appendChild(renderProject(project, index));
             });
         }
 
-        // --- EVENT LISTENERS ---
-        searchInput.addEventListener('input', (e) => {
-            currentSearch = e.target.value.toLowerCase();
+        searchInput.addEventListener('input', (event) => {
+            currentSearch = event.target.value.trim().toLowerCase();
             renderProjects();
         });
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentFilter = btn.dataset.filter;
+        filterBtns.forEach(button => {
+            button.addEventListener('click', () => {
+                filterBtns.forEach(item => item.classList.remove('active'));
+                button.classList.add('active');
+                currentFilter = button.dataset.filter;
                 renderProjects();
             });
         });
 
-        sortSelect.addEventListener('change', (e) => {
-            currentSort = e.target.value;
+        sortSelect.addEventListener('change', (event) => {
+            currentSort = event.target.value;
             renderProjects();
         });
 
